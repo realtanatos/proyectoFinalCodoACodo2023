@@ -8,7 +8,8 @@ CORS(app) #modulo cors es para que me permita acceder desde el frontend al backe
 
 
 # configuro la base de datos, con el nombre el usuario y la clave
-app.config['SQLALCHEMY_DATABASE_URI']='mysql+pymysql://root:root@localhost/proyecto'
+#app.config['SQLALCHEMY_DATABASE_URI']='mysql+pymysql://root:root@localhost:3306/proyecto'
+app.config['SQLALCHEMY_DATABASE_URI']='mysql+pymysql://ThanathosAR:prueba1234@ThanathosAR.mysql.pythonanywhere-services.com/ThanathosAR$proyecto'
 # URI de la BBDD                          driver de la BD  user:clave@URLBBDD/nombreBBDD
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False #none
 db= SQLAlchemy(app)   #crea el objeto db de la clase SQLAlquemy
@@ -16,22 +17,75 @@ ma=Marshmallow(app)   #crea el objeto ma de de la clase Marshmallow
 
 
 # defino las tablas
-class Producto(db.Model):   # la clase Producto hereda de db.Model    
+class Producto(db.Model):   # la clase Producto hereda de db.Model
     id=db.Column(db.Integer, primary_key=True)   #define los campos de la tabla
     nombre=db.Column(db.String(100))
-    precio=db.Column(db.Integer)
+    descripcion=db.Column(db.String(300))
+    fotoTarjeta=db.Column(db.String(200))
+    precio=db.Column(db.Float)
     stock=db.Column(db.Integer)
-    imagen=db.Column(db.String(400))
-    def __init__(self,nombre,precio,stock,imagen):   #crea el  constructor de la clase
+    precioClub=db.Column(db.Float)
+    fotoTarjetaOfertaClub=db.Column(db.String(200))
+    fotoCaruselOfertaClub=db.Column(db.String(200))
+    fotoDestacado=db.Column(db.String(100))
+    def __init__(self,nombre,descripcion,fotoTarjeta,precio,stock,precioClub,fotoTarjetaOfertaClub,fotoCaruselOfertaClub,fotoDestacado):   #crea el  constructor de la clase
         self.nombre=nombre   # no hace falta el id porque lo crea sola mysql por ser auto_incremento
+        self.descripcion=descripcion
+        self.fotoTarjeta=fotoTarjeta
         self.precio=precio
         self.stock=stock
-        self.imagen=imagen
-
-
-
+        self.precioClub=precioClub
+        self.fotoTarjetaOfertaClub=fotoTarjetaOfertaClub
+        self.fotoCaruselOfertaClub=fotoCaruselOfertaClub
+        self.fotoDestacado=fotoDestacado
 
     #  si hay que crear mas tablas , se hace aqui
+
+class Producto(db.Model):   # la clase Producto hereda de db.Model
+    id=db.Column(db.Integer, primary_key=True)   #define los campos de la tabla
+    nombre=db.Column(db.String(100))
+    descripcion=db.Column(db.String(300))
+    fotoTarjeta=db.Column(db.String(200))
+    precio=db.Column(db.Float)
+    stock=db.Column(db.Integer)
+    precioClub=db.Column(db.Float)
+    fotoTarjetaOfertaClub=db.Column(db.String(200))
+    fotoCaruselOfertaClub=db.Column(db.String(200))
+    fotoDestacado=db.Column(db.String(100))
+    def __init__(self,nombre,descripcion,fotoTarjeta,precio,stock,precioClub,fotoTarjetaOfertaClub,fotoCaruselOfertaClub,fotoDestacado):   #crea el  constructor de la clase
+        self.nombre=nombre   # no hace falta el id porque lo crea sola mysql por ser auto_incremento
+        self.descripcion=descripcion
+        self.fotoTarjeta=fotoTarjeta
+        self.precio=precio
+        self.stock=stock
+        self.precioClub=precioClub
+        self.fotoTarjetaOfertaClub=fotoTarjetaOfertaClub
+        self.fotoCaruselOfertaClub=fotoCaruselOfertaClub
+        self.fotoDestacado=fotoDestacado
+
+
+class Producto(db.Model):   # la clase Producto hereda de db.Model
+    id=db.Column(db.Integer, primary_key=True)   #define los campos de la tabla
+    nombre=db.Column(db.String(100))
+    descripcion=db.Column(db.String(300))
+    fotoTarjeta=db.Column(db.String(200))
+    precio=db.Column(db.Float)
+    stock=db.Column(db.Integer)
+    precioClub=db.Column(db.Float)
+    fotoTarjetaOfertaClub=db.Column(db.String(200))
+    fotoCaruselOfertaClub=db.Column(db.String(200))
+    fotoDestacado=db.Column(db.String(100))
+    def __init__(self,nombre,descripcion,fotoTarjeta,precio,stock,precioClub,fotoTarjetaOfertaClub,fotoCaruselOfertaClub,fotoDestacado):   #crea el  constructor de la clase
+        self.nombre=nombre   # no hace falta el id porque lo crea sola mysql por ser auto_incremento
+        self.descripcion=descripcion
+        self.fotoTarjeta=fotoTarjeta
+        self.precio=precio
+        self.stock=stock
+        self.precioClub=precioClub
+        self.fotoTarjetaOfertaClub=fotoTarjetaOfertaClub
+        self.fotoCaruselOfertaClub=fotoCaruselOfertaClub
+        self.fotoDestacado=fotoDestacado
+
 
 
 
@@ -41,16 +95,10 @@ with app.app_context():
 #  ************************************************************
 class ProductoSchema(ma.Schema):
     class Meta:
-        fields=('id','nombre','precio','stock','imagen')
-
-
-
+        fields=('id','nombre','descripcion','fotoTarjeta','precio','stock','precioClub','fotoTarjetaOfertaClub','fotoCaruselOfertaClub','fotoDestacado')
 
 producto_schema=ProductoSchema()            # El objeto producto_schema es para traer un producto
 productos_schema=ProductoSchema(many=True)  # El objeto productos_schema es para traer multiples registros de producto
-
-
-
 
 # crea los endpoint o rutas (json)
 @app.route('/productos',methods=['GET'])
@@ -59,8 +107,6 @@ def get_Productos():
     result=productos_schema.dump(all_productos)  # el metodo dump() lo hereda de ma.schema y
                                                  # trae todos los registros de la tabla
     return jsonify(result)                       # retorna un JSON de todos los registros de la tabla
-
-
 
 
 @app.route('/productos/<id>',methods=['GET'])
@@ -80,11 +126,18 @@ def delete_producto(id):
 @app.route('/productos', methods=['POST']) # crea ruta o endpoint
 def create_producto():
     #print(request.json)  # request.json contiene el json que envio el cliente
+
     nombre=request.json['nombre']
+    descripcion=request.json['descripcion']
+    fotoTarjeta=request.json['fotoTarjeta']
     precio=request.json['precio']
     stock=request.json['stock']
-    imagen=request.json['imagen']
-    new_producto=Producto(nombre,precio,stock,imagen)
+    precioClub=request.json['precioClub']
+    fotoTarjetaOfertaClub=request.json['fotoTarjetaOfertaClub']
+    fotoCaruselOfertaClub=request.json['fotoCaruselOfertaClub']
+    fotoDestacado=request.json['fotoDestacado']
+
+    new_producto=Producto(nombre,descripcion,fotoTarjeta,precio,stock,precioClub,fotoTarjetaOfertaClub,fotoCaruselOfertaClub,fotoDestacado)
     db.session.add(new_producto)
     db.session.commit() # confirma el alta
     return producto_schema.jsonify(new_producto)
@@ -93,16 +146,24 @@ def create_producto():
 @app.route('/productos/<id>' ,methods=['PUT'])
 def update_producto(id):
     producto=Producto.query.get(id)
- 
+
     producto.nombre=request.json['nombre']
+    producto.descripcion=request.json['descripcion']
+    producto.fotoTarjeta=request.json['fotoTarjeta']
     producto.precio=request.json['precio']
     producto.stock=request.json['stock']
-    producto.imagen=request.json['imagen']
-
+    producto.precioClub=request.json['precioClub']
+    producto.fotoTarjetaOfertaClub=request.json['fotoTarjetaOfertaClub']
+    producto.fotoCaruselOfertaClub=request.json['fotoCaruselOfertaClub']
+    producto.fotoDestacado=request.json['fotoDestacado']
 
     db.session.commit()    # confirma el cambio
     return producto_schema.jsonify(producto)    # y retorna un json con el producto
- 
+
+@app.route('/',methods=['GET'])
+def bienvenida():
+    return "Bienvenidos a Flask"
+
 
 
 # programa principal *******************************
