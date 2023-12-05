@@ -1,0 +1,129 @@
+#cart-container{
+    max-width: 500px;
+    margin: auto;
+  }
+  
+  .tarjeta-producto{
+    display: flex;
+    align-items: center;
+    height: 100px;
+    gap: 20px;
+  }
+  
+  .tarjeta-producto img{
+    height: 100%;
+  }
+  
+  .tarjeta-producto h3{
+    width: 130px;
+  }
+  .tarjeta-producto div{
+    background-color: var(--color-acento-claro);
+    padding: 3px;
+    border-radius: 5px;
+  }
+
+  .carrito-principal{
+    align-items: center;
+    display: block;
+  }
+  
+  #totales{
+    text-align: center;
+    color: white;
+    padding: 20px;
+  }
+  
+  #carrito-vacio{
+    text-align: center;
+    color: white;
+    padding: 50px;
+   
+  }
+
+  #link-tienda{
+    text-align: center;
+    color: bisque;
+    text-decoration: none;
+   
+  }
+
+  h1, h3, p, span{
+    color: bisque;
+  }
+
+  #productos-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;}
+  
+  .tarjeta-producto{
+   
+    /*background-color: var(--color-acento-claro);*/
+    text-align: center;
+    padding: 10px;
+    max-width: 700px;
+    height: 200px;
+    /*box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);*/
+    border-radius: 4px;
+    transition: 200ms;
+  }
+  
+  /*.tarjeta-producto:hover{
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+    translate: 0px -5px;
+  }*/
+  
+  .tarjeta-producto img{
+    max-width:100%;
+    aspect-ratio: 1.5;
+  }
+  
+  .precio{
+    font-weight: 600;
+  }
+  
+  .tarjeta-producto button{
+    font-size: small;
+    background-color: var(--color-acento);
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+    border:unset;
+    cursor:pointer;
+  }
+
+  
+:root{
+  --color-acento: #ee6130;
+  --color-acento-claro: #ee613033;
+  --color-texto: black;
+}
+
+button{
+  transition: 200ms;
+  
+}
+
+a:hover:not(#cart), button:hover{
+  color: var(--color-acento);
+  color: bisque;
+ 
+}
+
+section {
+    display: block;
+}
+
+#cuenta-carrito{
+  position: absolute;
+  background-color: var(--color-acento);
+  border-radius: 100%;
+  display: inline-block;
+  height: 25px;
+  line-height: 25px;
+  aspect-ratio: 1;
+  text-align: center;
+  /* margin-bottom: 15px; */
+}

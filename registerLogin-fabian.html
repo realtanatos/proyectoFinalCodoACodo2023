@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Agregado para cargar Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <!-- Fin de Agregado para cargar Google Fonts -->
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <title>Saraza Winery Club - Inicio</title>
+
+</head>
+
+<body>
+    <div class="contenedor" id="login-registro">
+        <header class="header animate__animated animate__bounce">
+            <h2>Inicio</h2>
+        </header>
+        <!-- <div class="widget-1" id="parrafoHero"> -->
+            <!-- <p class="parrafoH">En Saraza wine club, te invitamos a un mundo de experiencias enológicas exclusivas que solo podrás disfrutar al unirte a nuestra comunidad. 
+            </p> -->
+            <!-- <img src="./imagenes/wineHero.jpg" alt="Bienvenidos a Saraza Wine Club" class="heroimage"> -->
+        <!-- </div> -->
+        <div class="contenido">
+            <div class="contenedorLoginRegistro">
+                <div class="cajaAtras">
+                    <div class="cajaLogin">
+                        <h3>¿Tienes cuenta?</h3>
+                        <!-- <p>Iniciar sesión</p> -->
+                        <button id="bIniciarSession">Iniciar sesión</button>
+                    </div>
+                    <div class="cajaRegistro">
+                        <h3>¿No tienes cuenta?</h3>
+                        <p>Registrate para iniciar sesión</p>
+                        <button id="bRegistrar">Registrarse</button>
+                    </div>
+                    
+                </div>
+                <div class="contenedorFormLoginRegistro">
+                    <form action="" class="formularioLogin" id="formularioLogin">
+                        <h2>Iniciar Sesión</h2>
+                        <input type="email" id="emailLogin" placeholder="Correo Electronico" required>
+                        <input type="password" id="passwordLogin" placeholder="Contraseña" required>
+                        <button>Entrar</button>
+                        <p id="mensajeL" class="mensaje"></p>
+                    </form>
+                    <form action="" class="formularioRegistro" id="formularioRegistro">
+                        <h2>Registrarse</h2>
+                        <input type="text" id="nombreRegistro" placeholder="Nombre completo" required>
+                        <input type="email" id="emailRegistro" placeholder="Correo Electronico" required>
+                        <!-- <input type="text" id="usuarioRegistro" placeholder="usuario" required> -->
+                        <input type="password" id="passwordRegistro" placeholder="Contraseña" required>
+                        <input type="password" id="passwordRegistro2" placeholder="Confirmar contraseña" required>
+                        <button>Registrarse</button>
+                        <p id="mensajeR" class="mensaje"></p>
+                    </form>
+                    
+                </div>
+                
+            </div>
+
+
+            <br><br>
+            
+            <p>
+                En <span class="parrafo"><b>Saraza</b></span> wine club, te invitamos a un mundo de experiencias enológicas exclusivas que solo podrás disfrutar al unirte a nuestra comunidad.
+                <br><br>
+                
+            </p>
+        </div>
+        <div class="sidebar" id="ofertas-sidebar">
+            <!-- <p>ACA PONER LO QUE SE QUIERA POR EJEMPLO DESCUENTOS DE ESTE MES PARA REGISTRADOS - CLASS=SIDEBAR</p> -->
+            <h1>Descuento exclusivo para miembros de <span class="parrafo">SARAZA</span></h1>
+            <!-- <img src="./imagenes/f581acf4e3f6cfc34a0dd1b3a334a9db.jpg" alt="Bienvenido a Sara Winery Club"
+                class="widget"> -->
+               
+        </div>
+        <div class="sidebar-2" id="ofertas-sidebar2" >
+            <!-- <p>ACA PONER LO QUE SE QUIERA POR EJEMPLO TARJETAS DE PRODUCTOS CON OFERTAS - CLASS=SIDEBAR-2</p> -->
+            <h1>Descuento exclusivo para miembros de <span class="parrafo">SARAZA</span></h1>
+            <!-- <img src="./imagenes/b825a588d1b9b5f9151155749872da15.jpg" alt="Entrar a Saraza Wine Club" class="widget"> -->
+        </div>
+        <!-- <div class="widget-2">
+            <p>WIDGET-2 ACA PONER LO QUE SE QUIERA POR EJEMPLO TARJETAS CON TESTIMONIOS DE CLIENTES FELICES - CLASS=WIDGET-2</p>
+            <h3>CLIENTES FELICES, HIC!</h3>
+        </div> -->
+        <footer class="footer">
+            <h3>Footer</h3>
+        </footer>
+        <script src="js/validarRegistroLogin.js"></script>
+        <script src="./js/menu.js"></script>
+        <!-- <script src="./js/index.js"></script> -->
+        <script src="js/jRegistroLogin.js"></script>
+        
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,498 @@
+:root {
+    --clr-primary-400: 263 55% 52%;
+    --clr-secondary-400: 217 19% 35%;
+    --clr-secondary-500: 219 29% 14%;
+    --clr-neutral-100: 0 0% 100%;
+    --clr-neutral-200: 210 46% 95%;
+    --clr-neutral-300: 0 0% 81%;
+  
+    --ff-primary: "Barlow Semi Condensed", sans-serif;
+  
+    --fw-400: 500;
+    --fw-700: 600;
+  
+    --fs-300: 0.6875rem;
+    --fs-400: 0.8125rem;
+    --fs-500: 1.25rem;
+  }
+  
+  /* Box sizing rules */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  /* Remove default margin */
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  figure,
+  blockquote,
+  dl,
+  dd {
+    margin: 0;
+  }
+  
+  /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+  ul[role="list"],
+  ol[role="list"] {
+    list-style: none;
+  }
+  
+  /* Set core root defaults */
+  html:focus-within {
+    scroll-behavior: smooth;
+  }
+  
+  /* Set core body defaults */
+  body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+  }
+  
+  /* A elements that don't have a class get default styles */
+  a:not([class]) {
+    text-decoration-skip-ink: auto;
+  }
+  
+  /* Make images easier to work with */
+  img,
+  picture {
+    max-width: 100%;
+    display: block;
+  }
+  
+  /* Inherit fonts for inputs and buttons */
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+  
+  /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+  @media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+      scroll-behavior: auto;
+    }
+  
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  
+  body {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+  
+    font-family: var(--ff-primary);
+    font-weight: var(--fw-400);
+  
+    background-color: hsl(var(--clr-neutral-200));
+  }
+  
+  h1,
+  h2,
+  h3 {
+    font-weight: var(--fw-700);
+  }
+  
+  /* utilities */
+  .flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+  }
+  
+  .flow > *:where(:not(:first-child)) {
+    margin-top: var(--flow-spacer, 1em);
+  }
+  
+  .bg-primary-400 {
+    background: hsl(var(--clr-primary-400));
+  }
+  .bg-secondary-400 {
+    background: hsl(var(--clr-secondary-400));
+  }
+  .bg-secondary-500 {
+    background: hsl(var(--clr-secondary-500));
+  }
+  
+  .bg-neutral-100 {
+    background: hsl(var(--clr-neutral-100));
+  }
+  
+  .text-neutral-100 {
+    color: hsl(var(--clr-neutral-100));
+  }
+  .text-secondary-400 {
+    color: hsl(var(--clr-secondary-400));
+  }
+  .border-primary-400 {
+    border: 2px solid #a775f1;
+  }
+  
+  /* components */
+  .testimonial-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-auto-columns: 1fr;
+    grid-template-areas:
+     'one'
+     'two'
+     'three'
+     'four'
+     'five';
+  
+    padding-block: 2rem;
+    width: min(95%, 70rem);
+    margin-inline: auto;
+  }
+  /*
+  .testimonial {
+    font-size: var(--fs-400);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 2.5rem 3.75rem 3rem -3rem hsl(var(--clr-secondary-400) / 0.25);
+  }
+  
+  .testimonial:nth-child(1) {
+    grid-area: one;
+  }
+  .testimonial:nth-child(2) {
+    grid-area: two;
+  }
+  .testimonial:nth-child(3) {
+    grid-area: three;
+  }
+  .testimonial:nth-child(4) {
+    grid-area: four;
+  }
+  .testimonial:nth-child(5) {
+    grid-area: five;
+  }
+  
+  @media screen and (min-width: 33em) {
+    .testimonial-grid {
+        grid-template-areas:
+        "one one"
+        "two three"
+        "five five"
+        "four four";
+    }
+  }
+  
+  @media screen and (min-width: 38em) {
+    .testimonial-grid {
+      grid-template-areas:
+       'one one'
+       'two five'
+       'three five'
+       'four four';
+    }
+  }
+  
+  @media screen and (min-width: 54em) {
+    .testimonial-grid {
+        grid-template-areas:
+        "one one two"
+        "five five five"
+        "three four four";
+    }
+  }
+  
+  @media screen and (min-width: 75em) {
+    .testimonial-grid {
+        grid-template-areas:
+        "one one two five"
+        "three four four five";
+    }
+  }
+  
+  */
+  .testimonial.quote {
+    background-image: url("./images/bg-pattern-quotation.svg");
+    background-repeat: no-repeat;
+    background-position: top right 10%;
+  }
+  
+  .testimonial img {
+    width: 1.75rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+  }
+  
+  .testimonial .name {
+    font-size: var(--fs-400);
+    font-weight: var(--fw-400);
+    line-height: 1;
+  }
+  
+  .testimonial .position {
+    font-size: var(--fs-300);
+    opacity: 0.5;
+  }
+  
+  .testimonial > p:first-of-type {
+    font-size: var(--fs-500);
+    line-height: 1.2;
+  }
+  
+  .testimonial > p:last-of-type {
+    opacity: 0.7;
+  }
+
+
+
+
+  /* Estilos responsivos para pantallas menores o iguales a 500px */
+@media screen and (max-width: 500px) {
+    .contenedor#index {
+        grid-template-areas:
+            "header header header header"
+            "widget-1 widget-1 widget-1 widget-1"
+            "contenido contenido contenido contenido"
+            "widget-2 widget-2 widget-2 widget-2"
+            "sidebar sidebar sidebar sidebar"
+            "widget-3 widget-3 widget-3 widget-3"
+            "contenido-2 contenido-2 contenido-2 contenido-2"
+            "sidebar-2 sidebar-2 sidebar-2 sidebar-2"
+            "widget-4 widget-4 widget-4 widget-4"
+            "footer footer footer footer";
+    }
+
+    .contenedor#tienda {
+        grid-template-areas:
+            "header header header header"
+            "widget-1 widget-1 widget-1 widget-1"
+            "contenido contenido contenido contenido"
+            "contenido contenido contenido contenido"
+            "sidebar sidebar sidebar sidebar"
+            "footer footer footer footer";
+    }
+
+    .contenedor#carrito {
+        grid-template-areas:
+            "header header header header"
+            "widget-1 widget-1 widget-1 widget-1"
+            "contenido contenido contenido contenido"
+            "contenido contenido contenido contenido"
+            "sidebar sidebar sidebar sidebar"
+            "footer footer footer footer";
+    }
+
+    .contenedor#login-registro {
+        grid-template-areas:
+            "header header header header"
+            "widget-1 widget-1 widget-1 widget-1"
+            "contenido contenido contenido contenido"
+            "contenido contenido contenido contenido"
+            "sidebar sidebar sidebar sidebar"
+            "widget-2 widget-2 widget-2 widget-2"
+            "footer footer footer footer";
+    }
+
+    .contenedor#quienes-somos {
+        grid-template-areas:
+            "header header header header"
+            "widget-1 widget-1 widget-1 widget-1"
+            "contenido contenido contenido contenido"
+            "contenido contenido contenido contenido"
+            "sidebar sidebar sidebar sidebar"
+            "footer footer footer footer";
+    }
+    .tarjeta {
+        width: 100%; /* Ocupa el 100% del ancho cuando el ancho de pantalla es menor o igual a 500px */
+        max-width: none; /* Elimina el ancho máximo */
+        margin: 5px; /* Reduce el margen para un espaciado más compacto */
+    }
+}
+
+
+
+
+
+.contenedor>div,
+.contenedor .header {
+    background: #fff;
+    padding: 20px;
+    /*  padding de los sectores */
+    border-radius: 10 px;
+    /* elimine el borde redondeado */
+}
+
+.contenedor .contenido,
+.contenedor .sidebar,
+.contenedor .contenido-2,
+.contenedor .sidebar-2,
+.contenedor .footer {
+    background: #fff;
+    padding: 20px;
+    /*  padding de los sectores */
+    border-radius: 0px;
+    /* elimine el borde redondeado */
+/*    display: inline-block; */
+}
+
+.contenedor .header {
+    background: #ffffff;
+    color: #5f5f5f;
+    grid-area: header;
+    text-align: center;
+    align-items: center;
+
+}
+
+.contenedor .contenido {
+    grid-area: contenido;
+}
+
+.contenedor .contenido-2 {
+    grid-area: contenido-2;
+}
+
+
+
+.contenedor .sidebar {
+    grid-column: 3 / 4;
+    background: #fcf4eb;
+    text-align: center;
+    /* display: flex; lo saco para que el titulo aparezca arriba de la imagen */
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+    grid-area: sidebar;
+}
+
+.contenedor .sidebar-2 {
+    grid-column: 3 / 4;
+    background: #fcf4eb;
+    text-align: center;
+    /* display: flex; lo saco para que el titulo aparezca arriba de la imagen */
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+    grid-area: sidebar-2;
+}
+
+
+.contenedor .widget-1 {
+    background: #412027;
+    color: #fff;
+    height: auto;
+    text-align: center;
+/*    display: flex;
+    justify-content: center;*/
+  /*  align-items: stretch; */
+  /*  grid-auto-rows: 2rem; */
+    padding: 0px;
+    /*  padding de los sectores */
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+}
+
+.contenedor .widget-2 {
+    background: #fff;
+    color: #412027;
+    height: 100px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .widget-3 {
+    background: #fcfcfc;
+    color: #412027;
+    height: 100px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .widget-4 {
+    background: #ffffff;
+    color: #412027;
+    height: 100px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .widget-1 {
+    grid-area: widget-1;
+}
+
+.contenedor .widget-2 {
+    grid-area: widget-2;
+}
+
+.contenedor .widget-3 {
+    grid-area: widget-3;
+}
+
+.contenedor .widget-4 {
+    grid-area: widget-4;
+}
+
+.contenedor .footer {
+    background: #ffff;
+    color: #412027;
+    align-items: center;
+    text-align: center;
+    grid-area: footer;
+    justify-content: center;
+}
+
+
+/* fin de Tomado de grid-4-responsive.css */
+
+
+/* Tomado de Clase 6 CSS2 */
+
+h1 {
+    text-align: center;
+}
+
+.navheader {
+    margin: 10px;
+    background-color: rgb(224, 224, 224);
+    text-decoration: none;
+    color: rgb(95, 93, 93);
+    border: 1px solid rgb(241, 241, 234);
+    padding: 10px;
+    border-radius: 5px;
+    /* display: inline-block; */
+    /*toma en cuenta la altura de las etiquetas, como una mezcla de inline y block */
+}
+
+/* display: block; */
+/* pone los botones uno abajo del otro */
+/* display: inline-block; */
+/*toma en cuenta la altura de las etiquetas, como una mezcla de inline y block */
+
+nav a {
+    padding: 10px;
+
+
+
+
+
+}
+
+/* Finde Tomado de clase 6 CSS2 */

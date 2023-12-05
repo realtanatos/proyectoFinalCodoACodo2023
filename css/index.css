@@ -1,0 +1,867 @@
+* {
+    /*   margin: 0;*/
+    padding: 0;
+}
+
+.isotipo {
+    align-self: flex-start;
+    width: 400px;
+    height: 100px;
+    /*   display: inline-block; */
+    /*toma en cuenta la altura de las etiquetas, como una mezcla de inline y block */
+}
+
+.logotipo {
+    align-self: flex-start;
+    width: 50px;
+    height: 80px;
+    margin: 10px;
+    background-color: rgba(224, 224, 224, 0);
+    text-decoration: none;
+    color: rgb(95, 93, 93);
+    border: 0px solid rgb(241, 241, 234);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    /* display: inline-block; Si lo dejo se apilan las palabras */
+    /*toma en cuenta la altura de las etiquetas, como una mezcla de inline y block */
+    /*-webkit-text-fill-color: rgb(0, 0, 0); /* Will override color (regardless of order) */
+    /*-webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(255, 255, 255);*/
+    text-shadow:
+    -1px -1px 0 #ffffff,  
+     1px -1px 0 #ffffff,
+     -1px 1px 0 #ffffff,
+      1px 1px 0 #ffffff;
+}
+
+/* Estilos base para las tarjetas de los modulos ofertaClub y destacado */
+.tarjeta {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    /* display: inline-block; */
+    width: calc(50% - 20px);
+    /* Tarjetas ocupan el 50% del ancho de su contenedor */
+    box-sizing: border-box;
+    max-width: 400px;
+    /* Ancho máximo de 400px para evitar que se estiren demasiado */
+}
+
+/* Estilos específicos para la tarjeta con ID=destacado */
+#destacado {
+    background-color: #f9f9f9;
+}
+
+/* Estilos específicos para la tarjeta con ID=ofertaClub */
+#ofertaClub {
+    background-color: #e2f2e6;
+}
+
+
+
+body {
+    background: #412027;
+    color: #000;
+    font-family: 'Lora', serif;
+    /* Usar Lora de Google Fonts */
+}
+
+.img,
+.heroimage {
+    width: 100%;
+    /* height: 430px; */
+    object-fit: contain;
+    object-position: center;
+    border-radius: 50px;
+    /*   max-width: 100%;
+    display: block;
+*/
+}
+
+/* Tama;o imagenes automatico */
+.container img {
+    width: 100%;
+    height: auto;
+    /*background: #fff;*/
+}
+
+.widget {
+    /*max-width: 200px;*/
+    min-inline-size: 100px;
+    /*height: auto;*/
+    /*   margin: 20px;*/
+    width: 80%;
+    height: 350px;
+    margin: 20px;
+    align-self: auto;
+    object-fit: scale-down;
+}
+
+.contenedor {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 0px;
+    /* gap entre sectores */
+    /* grid-template-columns: repeat(4, 2fr); lo cambio para hacer todas las columnas iguales */
+    /*  grid-template-rows: repeat(8, auto); lo saco porque no hace falta declararlo */
+    /*grid-template-columns: repeat(4, minmax(200px, 1fr));*/
+    /* Pongo este para simplificar y que sean todas iguales */
+    /*grid-template-columns: repeat(autofill,minmax(25rem,1fr));  */
+    /*width: min(95%, 70rem);*/
+    /*grid-template-columns: repeat(4, 1fr);*/
+    grid-template-columns: 1fr, 1fr, 1fr,1fr;
+    margin-inline: auto;
+
+}
+
+.contenedor#index {
+    grid-template-areas:
+        "header header header header"
+        "widget-1 widget-1 widget-1 widget-1"
+        "contenido contenido sidebar sidebar"
+        "widget-2 widget-2 widget-2 widget-2"
+        "widget-2 widget-2 widget-2 widget-2"
+        "contenido-2 contenido-2 contenido-2 sidebar-2"
+        "testimonios testimonios testimonios testimonios"
+        "footer footer footer footer";
+}
+
+.contenedor#tienda {
+    grid-template-areas:
+        "header header header header"
+        "widget-1 widget-1 widget-1 widget-1"
+        "sidebar contenido contenido sidebar-2"
+        "sidebar contenido contenido sidebar-2"
+        "sidebar contenido contenido sidebar-2"
+        "sidebar contenido contenido sidebar-2"
+        "testimonios testimonios testimonios testimonios"
+        "footer footer footer footer";
+}
+
+.contenedor#carrito {
+    grid-template-areas:
+        "header header header header"
+        "widget-1 widget-1 widget-1 widget-1"
+        "sidebar contenido contenido sidebar-2"
+        "sidebar contenido contenido sidebar-2"
+        "sidebar contenido contenido sidebar-2"
+        "widget-2 widget-2 widget-2 widget-2"
+        "widget-2 widget-2 widget-2 widget-2"
+        "footer footer footer footer";
+}
+
+.contenedor#login-registro {
+    grid-template-areas:
+        "header header header header"
+        "widget-1 widget-1 widget-1 widget-1"
+        "sidebar contenido contenido sidebar-2"
+        "sidebar contenido contenido sidebar-2"
+        "sidebar contenido contenido sidebar-2"
+        "widget-2 widget-2 widget-2 widget-2"
+        "widget-2 widget-2 widget-2 widget-2"
+        "footer footer footer footer";
+}
+
+.contenedor#quienes-somos {
+    grid-template-areas:
+        "header header header header"
+        "widget-1 widget-1 widget-1 widget-1"
+        "sidebar contenido contenido sidebar-2"
+        "sidebar contenido contenido sidebar-2"
+        "sidebar contenido contenido sidebar-2"
+        "widget-2 widget-2 widget-2 widget-2"
+        "widget-2 widget-2 widget-2 widget-2"
+        "footer footer footer footer";
+}
+
+/*Inicio tienda*/
+.productos{
+    
+}
+.tarjeta-producto{
+    border: 1px solid;
+    margin: 10px;
+    padding: 0px;
+    width: 200px; /* Ajusta el ancho según tus necesidades */
+    display: inline-block;
+    
+  
+}
+
+.card{
+    /*Esto es de la img*/
+    width: 97%;
+    object-fit: contain;
+
+}
+.descripTienda{
+    display:none;
+    
+}
+
+.tarjeta-producto:hover{
+   width: 85%;
+  
+    .descripTienda{
+        display:block;
+        
+    }
+
+}
+/*Fin tienda*/
+
+/* Inicio Login Registro */
+/*Oferta*/
+#ofertas-sidebar,#ofertas-sidebar2{
+    background-color: #fff;
+    padding: 10px;
+}
+.oferta-card,.oferta-card2{
+    border:#e9e1d8 solid ;
+    border-radius: 30px;
+    
+    /* background-color: rgb(146, 65, 99); */
+    margin-top: 20px;
+    padding: 10px;
+    /* background-color: #412027; */
+}
+.nombreOferta{
+   /* font-size: 60px; */
+}
+.precioDes{
+    border: solid #e9e1d8;
+    border-radius: 30px;
+    background-color: rgb(179, 83, 155);
+}
+.descrip{
+   padding: 5px;
+    display: none;
+}
+.precios{
+    font-size: 25px;
+    display:block;
+}
+.precioClub{
+    
+    color: #ffffff;
+}
+.oferta-card:hover {
+    
+    .descrip{
+        display:block;
+    }
+    .precios{
+        display: none;
+    }
+}
+.oferta-card2:hover {
+    
+    .descrip{
+        display:block;
+    }
+    .precios{
+        display: none;
+    }
+}
+/*Fin Oferta*/
+.contenedor#login-registro {
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-areas:
+    "header header header header"
+    "widget-1 widget-1 widget-1 widget-1"
+    "sidebar contenido contenido sidebar-2"
+    "sidebar contenido contenido sidebar-2"
+    "sidebar contenido contenido sidebar-2"
+    "widget-2 widget-2 widget-2 widget-2"
+    "widget-2 widget-2 widget-2 widget-2"
+    "footer footer footer footer";
+}
+
+#parrafoHero{
+    background-color: white;
+    padding: 30px;
+
+}
+
+.parrafo {
+
+    color: rgb(151, 46, 90);
+
+
+}
+
+.contenedorLoginRegistro {
+    
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+
+}
+
+.cajaAtras {
+    max-width: 600px;
+    height: 720px;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* backdrop-filter: blur(10px); */
+    /* background-color:rgba(29, 29, 28, 0.5); */
+    background:linear-gradient(rgb(26, 3, 8), rgb(151, 46, 90)) ;
+    border-radius: 15px;
+}
+
+.cajaAtras div {
+    top: 40px;
+    left: 25%;
+    margin: 0px;
+    padding: 30px;
+    position: absolute;
+    /* margin: 100px 40px; */
+    color: white;
+    /* transition: all 500ms;  */
+}
+
+.cajaAtras div p,
+.cajaAtras div button {
+    margin: 30px;
+}
+
+.cajaAtras div h3 {
+    font-weight: 400;
+    font-size: 30px;
+}
+
+.cajaAtras button {
+    padding: 10px 40px;
+    border: 2px solid white;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    outline: none;
+    transition: 300ms;
+}
+
+.cajaLogin {
+    opacity: 0;
+    display: "none";
+}
+
+.cajaAtrasRegistro {
+    opacity: 1;
+    display: block;
+}
+
+.cajaAtras button:hover {
+    background: white;
+    color: rgb(151, 46, 90);
+}
+
+.contenedorFormLoginRegistro {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 350px;
+    position: relative;
+    top: -220px;
+    left: 10%;
+    
+}
+
+.contenedorFormLoginRegistro form {
+    width: 100%;
+    padding: 60px 40px;
+    background: rgb(255, 255, 255);
+    position: absolute;
+    border-radius: 20px;
+}
+
+.contenedorFormLoginRegistro form h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgb(151, 46, 90);
+}
+
+.contenedorFormLoginRegistro form input {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background: rgb(231, 227, 230);
+    font-size: 16px;
+    outline: none;
+}
+
+.contenedorFormLoginRegistro form button {
+    padding: 10px 40px;
+    margin-top: 40px;
+    border-radius: 10px;
+    border: none;
+    font-size: 14px;
+    background: rgb(151, 46, 90);
+    cursor: pointer;
+    outline: none;
+}
+.formularioLogin{
+    
+/* margin: 10px; */
+    
+opacity: 1;
+    
+display: block;
+}
+
+.formularioRegistro {
+    bottom: -150px;
+    display: none;
+
+}
+
+.mensaje {
+    margin: 10px;
+    color: rgb(151, 46, 90);
+}
+
+/* Fin del login Registro */
+@media screen and (max-width: 1100px) {
+    .contenedor#login-registro {
+        grid-template-columns: 20% 20% 30% 30%;
+        grid-template-areas:
+            "header header header header"
+            "widget-1 widget-1 widget-1 widget-1"
+            "contenido contenido contenido sidebar" /*contenido contenido sidebar sidebar */
+            "contenido contenido contenido sidebar"
+            "contenido contenido contenido sidebar-2"
+            "contenido contenido contenido sidebar-2"
+            "widget-2 widget-2 widget-2 widget-2"
+            "footer footer footer footer";
+    }
+    
+}
+@media screen and (max-width: 768px) {
+    .contenedor#index {
+        grid-template-areas:
+            "header header header header"
+            "widget-1 widget-1 widget-1 widget-1"
+            "sidebar sidebar sidebar sidebar"
+            "contenido contenido contenido contenido"
+            "contenido-2 contenido-2 contenido-2 sidebar-2"
+            "testimonios testimonios testimonios testimonios"
+            "footer footer footer footer";
+    }
+
+    .contenedor#tienda {
+        grid-template-areas:
+            "header header header header"
+            "widget-1 widget-1 widget-1 widget-1"
+            "contenido contenido sidebar sidebar"
+            "contenido contenido sidebar sidebar"
+            "contenido-2 contenido-2 sidebar-2 sidebar-2"
+            "contenido-2 contenido-2 widget-2 widget-2"
+            "testimonios testimonios testimonios testimonios"
+            "footer footer footer footer";
+    }
+
+    .contenedor#carrito {
+        grid-template-areas:
+            "header header header header"
+            "widget-1 widget-1 widget-1 widget-1"
+            "contenido contenido sidebar sidebar"
+            "contenido contenido sidebar sidebar"
+            "contenido contenido sidebar-2 sidebar-2"
+            "contenido contenido sidebar-2 sidebar-2"
+            "widget-2 widget-2 widget-2 widget-2"
+            "footer footer footer footer";
+    }
+
+    .contenedor#login-registro {
+        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-areas:
+            "header header header header"
+            "widget-1 widget-1 widget-1 widget-1"
+            "contenido contenido contenido contenido" /*contenido contenido sidebar sidebar;;
+        "contenido contenido contenido contenido"
+            "contenido contenido contenido contenido"
+            "contenido contenido contenido contenido"
+            "sidebar sidebar sidebar-2 sidebar-2 "
+            "footer footer footer footer"; */;
+    }
+    /*registro*/
+    
+    .cajaAtras{
+        max-width: 500px;
+    }
+    
+    .contenedor#quienes-somos {
+        grid-template-areas:
+            "header header header header"
+            "widget-1 widget-1 widget-1 widget-1"
+            "contenido contenido sidebar sidebar"
+            "contenido contenido sidebar sidebar"
+            "contenido contenido sidebar-2 sidebar-2"
+            "contenido contenido sidebar-2 sidebar-2"
+            "widget-2 widget-2 widget-2 widget-2"
+            "footer footer footer footer";
+    }
+
+    .tarjeta {
+        width: 100%;
+        /* Ocupa el 100% del ancho cuando el ancho de pantalla es menor o igual a 768px */
+        max-width: 500px;
+        /* Ancho máximo de 500px */
+        margin: 5px;
+        /* Reduce el margen para un espaciado más compacto */
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    .contenedor#index {
+        grid-template-areas:
+            "header header header header"
+            "widget-1 widget-1 widget-1 widget-1"
+            "contenido contenido contenido contenido"
+            "widget-2 widget-2 widget-2 widget-2"
+            "sidebar sidebar sidebar sidebar"
+            "widget-3 widget-3 widget-3 widget-3"
+            "contenido-2 contenido-2 contenido-2 contenido-2"
+            "sidebar-2 sidebar-2 sidebar-2 sidebar-2"
+            "testimonios testimonios testimonios testimonios"
+            "footer footer footer footer";
+    }
+
+    .contenedor#tienda {
+        grid-template-areas:
+            "header header header header"
+            "widget-1 widget-1 widget-1 widget-1"
+            "contenido contenido contenido contenido"
+            "contenido contenido contenido contenido"
+            "sidebar sidebar sidebar sidebar"
+            "footer footer footer footer";
+    }
+
+    .contenedor#carrito {
+        grid-template-areas:
+            "header header header header"
+            "contenido contenido contenido contenido"
+            "contenido contenido contenido contenido"
+            "sidebar sidebar sidebar-2 sidebar-2"
+            "sidebar sidebar sidebar-2 sidebar-2"
+            "footer footer footer footer";
+    }
+
+    .contenedor#login-registro {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            "header header header header"
+            "widget-1 widget-1 widget-1 widget-1"
+            "contenido contenido contenido contenido"
+            "contenido contenido contenido contenido"
+            "sidebar sidebar sidebar-2 sidebar-2"
+            "sidebar sidebar sidebar-2 sidebar-2"
+            "footer footer footer footer";
+    }
+
+    
+
+
+
+    .contenedorFormLoginRegistro form{
+        left:-7%;
+        width: 67%;   
+    }
+    
+
+
+    .contenedor#quienes-somos {
+        grid-template-areas:
+            "header header header header"
+            "widget-1 widget-1 widget-1 widget-1"
+            "contenido contenido contenido contenido"
+            "contenido contenido contenido contenido"
+            "sidebar sidebar sidebar sidebar"
+            "footer footer footer footer";
+    }
+
+    .tarjeta {
+        width: 100%;
+        /* Ocupa el 100% del ancho cuando el ancho de pantalla es menor o igual a 500px */
+        max-width: none;
+        /* Elimina el ancho máximo */
+        margin: 5px;
+        /* Reduce el margen para un espaciado más compacto */
+    }
+}
+
+
+
+
+
+
+
+
+.contenedor>div,
+.contenedor .header {
+    background: #fff;
+    padding: 20px;
+    /*  padding de los sectores */
+    border-radius: 10 px;
+    /* elimine el borde redondeado */
+}
+
+.contenedor .contenido,
+.contenedor .sidebar,
+.contenedor .sidebar-2,
+.contenedor .footer {
+    background: #fff;
+    padding: 20px;
+    /*  padding de los sectores */
+    border-radius: 0px;
+    /* elimine el borde redondeado */
+    /*    display: inline-block; */
+}
+
+.contenedor .contenido-2 {
+    background: #fcf4eb;
+    padding: 20px;
+    /*  padding de los sectores */
+    border-radius: 0px;
+    /* elimine el borde redondeado */
+    /*    display: inline-block; */
+}
+
+
+.contenedor .header {
+    /* background: #ffffff;*/
+    background-image: url('../imagenes/wineHero.jpg');
+    /* Imagen de background */
+    color: #5f5f5f;
+    grid-area: header;
+    text-align: center;
+    align-items: center;
+
+    background-size: 100% 300px;
+    /* Ajusta el tamaño de la imagen al contenedor */
+    background-position: center;
+    /* Centra la imagen en el contenedor */
+    background-repeat: no-repeat;
+    /* Evita que la imagen se repita */
+    color: #fff;
+    /* Color del texto dentro del encabezado */
+    text-align: center;
+    /* Alinea el texto al centro */
+    padding: 20px;
+    /* Espacio interno para el contenido */
+
+}
+
+.contenedor .contenido {
+    grid-area: contenido;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    display: inline-flex;
+    min-width: 270px;
+}
+
+.contenedor .contenido-2 {
+    grid-area: contenido-2;
+}
+
+
+
+.contenedor .sidebar {
+
+    text-align: center;
+    /* display: flex; lo saco para que el titulo aparezca arriba de la imagen */
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+    grid-area: sidebar;
+    object-fit: cover;
+    object-position: center;
+}
+
+.contenedor .sidebar-2 {
+    /*   grid-column: 3 / 4;*/
+    /*background: #fcf4eb;*/
+    text-align: center;
+    /* display: flex; lo saco para que el titulo aparezca arriba de la imagen */
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    display: inline-block;
+    min-height: 100px;
+    grid-area: sidebar-2;
+}
+
+.contenedor .sidebar-login {
+    /*   grid-column: 3 / 4;*/
+    background: #fcf4eb;
+    text-align: center;
+    /* display: flex; lo saco para que el titulo aparezca arriba de la imagen */
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    display: inline-block;
+    min-height: 100px;
+    grid-area: sidebar-2;
+}
+
+.contenedor .widget-1 {
+    /*background: #fcf4eb;*/
+    background: #FFF;
+    color: #fff;
+    height: auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    /*  align-items: stretch; */
+    /*  grid-auto-rows: 2rem; */
+    padding: 0px;
+    /*  padding de los sectores */
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+}
+
+.contenedor .widget-2 {
+    background: #fff;
+    color: #412027;
+    height: 100px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .widget-3 {
+    background: #fcfcfc;
+    color: #412027;
+    height: 100px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .testimonios {
+    background: #ffffff;
+    color: #412027;
+    /*   height: 100px; */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: inline-block;
+    height: auto;
+    /*  align-items: stretch; */
+    /*  grid-auto-rows: 2rem; */
+    padding: 0px;
+    /*  padding de los sectores */
+    object-fit: cover;
+    object-position: center;
+    width: auto;
+
+
+
+
+}
+
+.contenedor .widget-1 {
+    grid-area: widget-1;
+    
+}
+
+.contenedor .widget-2 {
+    grid-area: widget-2;
+}
+
+.contenedor .widget-3 {
+    grid-area: widget-3;
+}
+
+.contenedor .testimonios {
+    grid-area: testimonios;
+}
+
+.contenedor .sidebar-login {
+    grid-area: sidebar-login;
+}
+
+.contenedor .footer {
+    background: #ffff;
+    color: #412027;
+    align-items: center;
+    text-align: center;
+    grid-area: footer;
+    justify-content: center;
+}
+
+
+/* fin de Tomado de grid-4-responsive.css */
+
+
+/* Tomado de Clase 6 CSS2 */
+
+h1 {
+    text-align: center;
+    
+}
+
+.navheader {
+    margin: 10px;
+    background-color: rgb(224, 224, 224);
+    text-decoration: none;
+    color: rgb(95, 93, 93);
+    border: 1px solid rgb(241, 241, 234);
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    /*toma en cuenta la altura de las etiquetas, como una mezcla de inline y block */
+}
+
+/* display: block; */
+/* pone los botones uno abajo del otro */
+/* display: inline-block; */
+/*toma en cuenta la altura de las etiquetas, como una mezcla de inline y block */
+
+nav a {
+    padding: 10px;
+
+}
+
+/* Finde Tomado de clase 6 CSS2 */
+
+/* El Call To Action del Hero Section */
+
+/* Button Styles */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #412027;
+    ;
+    /* Los colores de Saraza */
+    color: #FFF;
+    /* Color del texto BLANCO */
+    text-decoration: none;
+    border: none;
+    border-radius: 45px;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.button:hover {
+    background-color: #412027;
+    /* Color para el HOVER,  buscar otro */
+}
