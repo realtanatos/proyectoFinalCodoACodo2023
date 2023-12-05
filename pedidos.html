@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos</title>
+    <!-- Incluir Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+
+<div id="app">
+    <h1>Pedidos</h1>
+
+    <!-- Formulario para agregar un nuevo pedido 
+    
+    HABRIA QUE HACER EL CODIGO PARA VERIFICAR QUE
+    EL QUE ESTA ARMANDO UN PEDIDO ES UN USUARIO REGISTRADO
+    
+    -->
+
+    <form @submit.prevent="agregarPedido">
+        <label for="usuarioComprador">Usuario comprador:</label>
+        <input type="text" v-model="usuarioComprador" required>
+
+        <label for="total">Total:</label>
+        <input type="number" v-model="total" required>
+
+        <label for="formaPago">Forma de pago:</label>
+        <input type="text" v-model="formaPago" required>
+
+        <!-- FALTA AGREGAR OTROS ATRIBUTOS DEL PEDIDO
+        SEGUN LOS QUE ARME EN LA CLASS PEDIDO -->
+
+        <button type="submit">Agregar Pedido</button>
+    </form>
+
+    <!-- Lista de pedidos -->
+    <ul>
+        <li v-for="pedido in pedidos" :key="pedido.pedidoId">
+            {{ pedido.usuarioComprador }} - {{ pedido.total }}
+            <button @click="eliminarPedido(pedido.pedidoId)">Eliminar</button>
+            <!-- Otros botones para editar o actualizar pedidos -->
+        </li>
+    </ul>
+</div>
+
+<!-- Incluir el script de pedidos.js -->
+<script src="./js/pedidosCRUD.js"></script>
+
+</body>
+</html>

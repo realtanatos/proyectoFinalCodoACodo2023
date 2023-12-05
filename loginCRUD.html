@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <!-- ESTE ES UN LOGIN SUPER BASICO PARA QUE LO COMBINEN CON SU LOGIN DEL FRONTEND
+LO ARME TENIENDO EN CUENTA LOS NOMBRES DE LOS CAMPOS DE LAS CLASES QUE ARME PARA
+EL CRUD
+HAY 3 CRUD, UNO DE PRODUCTOS, UNO DE CLIENTES, Y UNO DE PEDIDOS
+EL CRUD DE PEDIDOS COMBINA DATOS DEL CLIENTE Y DE LOS PRODUCTOS
+
+DE ESA FORMA LA CLASE PEDIDOS TIENE UN STR QUE IMPRIME UNA FACTURA
+
+LA FACTURA LA CALCULA MULTIPLICANDO PRECIOS POR CANTIDADES Y SUMANDO TODO
+
+POR ESO TOMA DATOS DE TODAS LAS TABLAS
+
+Y ADEMAS ARMA UNA TABLA INTERMEDIA QUE SE LLAMA PEDIDOSITEMS
+EN ESA TABLA ARMO UNA LISTA DE PRODUCTOS, PARA PODER PONER PRODUCTOS REPETIDOS 
+
+FALTA ARMAR UN CODIGO QUE COMPARE EL INGRESO DE UISUARIO Y CLAVE 
+CON EL USUARIO YU CLAVE QUE HAY EN LA BASE DE DATOS
+Y AHI ENTONCES DEJARLO VER ESTA PAGINA O ARMAR PEDIDO
+
+-->
+    <!-- Enlaces a hojas de estilo, scripts y otras cosas  -->
+</head>
+
+<body>
+    <h2>Iniciar Sesión</h2>
+
+    <form id="loginForm">
+        <label for="nombreUsuario">Nombre de Usuario:</label>
+        <input type="text" id="nombreUsuario" name="nombreUsuario" required>
+
+        <label for="clave">Contraseña:</label>
+        <input type="password" id="clave" name="clave" required>
+
+        <button type="button" onclick="iniciarSesion()">Iniciar Sesión</button>
+    </form>
+
+    <!-- Enlace para registrarse -->
+    <p>¿No tienes una cuenta? <a href="registroCRUD.html">Regístrate</a></p>
+
+    <!-- Scripts y otros enlaces a recursos adicionales -->
+
+    <footer>
+    </footer>
+    <!--Link de Bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+        crossorigin="anonymous"></script>
+    <script src="./js/main.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script><!--Link de VUE-->
+    <script src="./js/productosCRUD.js"></script>
+    <script src="./js/loginCRUD.js" ></script>
+</body>
+
+</html>

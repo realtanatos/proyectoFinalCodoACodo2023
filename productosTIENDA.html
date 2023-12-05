@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Productos</title>
+  <!-- Incluye Vue.js (asegúrate de ajustar la URL según tu configuración) -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+
+<div id="app">
+  <h1>Lista de Productos</h1>
+
+  <div v-if="productos.length === 0">
+    <p>No hay productos disponibles.</p>
+  </div>
+
+  <div v-else>
+    <div v-for="(producto, index) in productosPaginados" :key="producto.productoId" class="producto">
+      <h3>{{ producto.nombre }}</h3>
+      <p>{{ producto.descripcion }}</p>
+      <p>Precio: {{ producto.precio }}</p>
+      <!-- 
+        UNA PAGINA DE PRODUCTOS CON VUE, QUE PERMITE NAVEGAR
+        CADA PAGINA TIENE 6 PRODUCTOS Y PODES IR HACIA ADELANTE O ATRAS
+        
+        EN ESTE SECTOR LE PONEMOS LO QUE QUEREMOS MOSTRAR O ARMAR UNA TARJETA 
+      CON LAS FOTOS Y ETC -->
+    </div>
+    
+    <div class="navegacion">
+      <button @click="paginaActual > 1 ? irPagina(-1) : null">Anterior</button>
+      <button @click="paginaActual < totalPaginas ? irPagina(1) : null">Siguiente</button>
+    </div>
+  </div>
+</div>
+
+<script src="./js/productosCRUD.js"></script>
+</body>
+</html>
+      <!-- 
+        MANDAR ESTE CSS A UN ARCHIVO APARTE -->
+
+<style>
+  .producto {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .navegacion {
+    margin-top: 20px;
+  }
+  
+</style>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+    <!-- Incluir Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+
+<div id="app">
+    <h1>Clientes</h1>
+
+    <!-- Formulario para agregar un nuevo cliente -->
+    <form @submit.prevent="agregarCliente">
+        <label for="nombreUsuario">Nombre de usuario:</label>
+        <input type="text" v-model="nombreUsuario" required>
+
+        <label for="nombreApellido">Nombre y apellido:</label>
+        <input type="text" v-model="nombreApellido" required>
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" v-model="email" required>
+
+        <!-- FALTA AGREGAR LOS OTROS ATRIBUTOS DEL CLIENTE
+        SEGUN COMO ARME AL CLIENTE EN CLASS CLIENTE -->
+
+        <button type="submit">Agregar Cliente</button>
+    </form>
+
+    <!-- Lista de clientes -->
+    <ul>
+        <li v-for="cliente in clientes" :key="cliente.clienteId">
+            {{ cliente.nombreUsuario }} - {{ cliente.email }}
+            <button @click="eliminarCliente(cliente.clienteId)">Eliminar</button>
+            <!-- Otros botones para editar o actualizar clientes -->
+        </li>
+    </ul>
+</div>
+
+<!-- Incluir el script de clientes.js -->
+<script src="./js/clientesCRUD.js"></script>
+
+</body>
+</html>

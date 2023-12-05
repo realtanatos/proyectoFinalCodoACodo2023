@@ -19,8 +19,8 @@ class Cliente(db.Model):
     nombreApellido = db.Column(db.String(100))
     email = db.Column(db.String(50))
     clave = db.Column(db.String(20))
-    telefonoFijo = db.Column(db.Integer)
-    telefonoCelular = db.Column(db.Integer)
+    telefonoFijo = db.Column(db.String(20))
+    telefonoCelular = db.Column(db.String(20))
     miembroClub = db.Column(db.Boolean, default=False)
     direccionEnvio = db.Column(db.String(200))
     pisoDeptoEnvio = db.Column(db.String(50))
@@ -68,18 +68,26 @@ class Pedido(db.Model):
     pedidoId = db.Column(db.Integer, primary_key=True)
     usuarioComprador = db.Column(db.String(20), db.ForeignKey('cliente.clienteId'))
     total = db.Column(db.Float)
-    envio = db.Column(db.String(50))
+    direccionEnvio = db.Column(db.String(200), db.ForeignKey('cliente.direccionCliente'))
+    pisoDeptoEnvio = db.Column(db.String(50), db.ForeignKey('cliente.pisoDeptoCliente'))
+    codigoPostalEnvio = db.Column(db.String(20), db.ForeignKey('cliente.codigoPostalCliente'))
+    localidadEnvio = db.Column(db.String(50), db.ForeignKey('cliente.localidadCliente'))
+    provinciaEnvio = db.Column(db.String(50), db.ForeignKey('cliente.provinciaCliente'))
     formaPago = db.Column(db.String(50))
 
     # Lista de ítems asociados al pedido (relación con Item)
     items = db.relationship('Item', backref='pedido', lazy=True)
 
     # Constructor de la clase
-    def __init__(self, usuarioComprador, items, total, envio, formaPago):
+    def __init__(self, usuarioComprador, items, total, direccionEnvio, pisoDeptoEnvio, codigoPostalEnvio, localidadEnvio, provinciaEnvio, formaPago):
         self.usuarioComprador = usuarioComprador
         self.items = items
         self.total = total
-        self.envio = envio
+        self.direccionEnvio = direccionEnvio
+        self.pisoDeptoEnvio = pisoDeptoEnvio
+        self.codigoPostalEnvio = codigoPostalEnvio
+        self.localidadEnvio = localidadEnvio
+        self.provinciaEnvio = provinciaEnvio
         self.formaPago = formaPago
 
 class Producto(db.Model):
@@ -116,7 +124,7 @@ with app.app_context():
 class ClienteSchema(ma.Schema):
     class Meta:
         fields = ('clienteId', 'nombreUsuario', 'nombreApellido', 'email', 'clave', 'telefonoFijo', 'telefonoCelular',
-                  'miembroClub', 'direccionEnvio', 'pisoDeptoEnvio', 'codigoPostalEnvio', 'localidadEnvio', 'provinciaEnvio')
+                  'miembroClub', 'direccionCliente', 'pisoDeptoCliente', 'codigoPostalCliente', 'localidadCliente', 'provinciaCliente')
 
 cliente_schema = ClienteSchema()
 clientes_schema = ClienteSchema(many=True)
@@ -240,14 +248,14 @@ def create_cliente():
     telefonoFijo=request.json['telefonoFijo']
     telefonoCelular=request.json['telefonoCelular']
     miembroClub=request.json['miembroClub']
-    direccionEnvio=request.json['direccionEnvio']
-    pisoDeptoEnvio=request.json['pisoDeptoEnvio']
-    codigoPostalEnvio=request.json['codigoPostalEnvio']
-    localidadEnvio=request.json['localidadEnvio']
-    provinciaEnvio=request.json['provinciaEnvio']
+    direccionCliente=request.json['direccionCliente']
+    pisoDeptoCliente=request.json['pisoDeptoCliente']
+    codigoPostalCliente=request.json['codigoPostalCliente']
+    localidadCliente=request.json['localidadCliente']
+    provinciaCliente=request.json['provinciaCliente']
 
     new_cliente = Cliente(nombreUsuario, nombreApellido, email, clave, telefonoFijo, telefonoCelular, miembroClub,
-                          direccionEnvio, pisoDeptoEnvio, codigoPostalEnvio, localidadEnvio, provinciaEnvio)
+                          direccionCliente, pisoDeptoCliente, codigoPostalCliente, localidadCliente, provinciaCliente)
     db.session.add(new_cliente)
     db.session.commit()
     return cliente_schema.jsonify(new_cliente)
@@ -264,11 +272,11 @@ def update_cliente(clienteId):
     cliente.telefonoFijo=request.json['telefonoFijo']
     cliente.telefonoCelular=request.json['telefonoCelular']
     cliente.miembroClub=request.json['miembroClub']
-    cliente.direccionEnvio=request.json['direccionEnvio']
-    cliente.pisoDeptoEnvio=request.json['pisoDeptoEnvio']
-    cliente.codigoPostalEnvio=request.json['codigoPostalEnvio']
-    cliente.localidadEnvio=request.json['localidadEnvio']
-    cliente.provinciaEnvio=request.json['provinciaEnvio']
+    cliente.direccionCliente=request.json['direccionCliente']
+    cliente.pisoDeptoCliente=request.json['pisoDeptoCliente']
+    cliente.codigoPostalCliente=request.json['codigoPostalCliente']
+    cliente.localidadCliente=request.json['localidadCliente']
+    cliente.provinciaCliente=request.json['provinciaCliente']
 
     db.session.commit()    # confirma el cambio
     return cliente_schema.jsonify(cliente)    # y retorna un json con el cliente
