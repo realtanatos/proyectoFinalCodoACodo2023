@@ -41,53 +41,6 @@ class Producto(db.Model):   # la clase Producto hereda de db.Model
 
     #  si hay que crear mas tablas , se hace aqui
 
-class Producto(db.Model):   # la clase Producto hereda de db.Model
-    id=db.Column(db.Integer, primary_key=True)   #define los campos de la tabla
-    nombre=db.Column(db.String(100))
-    descripcion=db.Column(db.String(300))
-    fotoTarjeta=db.Column(db.String(200))
-    precio=db.Column(db.Float)
-    stock=db.Column(db.Integer)
-    precioClub=db.Column(db.Float)
-    fotoTarjetaOfertaClub=db.Column(db.String(200))
-    fotoCaruselOfertaClub=db.Column(db.String(200))
-    fotoDestacado=db.Column(db.String(100))
-    def __init__(self,nombre,descripcion,fotoTarjeta,precio,stock,precioClub,fotoTarjetaOfertaClub,fotoCaruselOfertaClub,fotoDestacado):   #crea el  constructor de la clase
-        self.nombre=nombre   # no hace falta el id porque lo crea sola mysql por ser auto_incremento
-        self.descripcion=descripcion
-        self.fotoTarjeta=fotoTarjeta
-        self.precio=precio
-        self.stock=stock
-        self.precioClub=precioClub
-        self.fotoTarjetaOfertaClub=fotoTarjetaOfertaClub
-        self.fotoCaruselOfertaClub=fotoCaruselOfertaClub
-        self.fotoDestacado=fotoDestacado
-
-
-class Producto(db.Model):   # la clase Producto hereda de db.Model
-    id=db.Column(db.Integer, primary_key=True)   #define los campos de la tabla
-    nombre=db.Column(db.String(100))
-    descripcion=db.Column(db.String(300))
-    fotoTarjeta=db.Column(db.String(200))
-    precio=db.Column(db.Float)
-    stock=db.Column(db.Integer)
-    precioClub=db.Column(db.Float)
-    fotoTarjetaOfertaClub=db.Column(db.String(200))
-    fotoCaruselOfertaClub=db.Column(db.String(200))
-    fotoDestacado=db.Column(db.String(100))
-    def __init__(self,nombre,descripcion,fotoTarjeta,precio,stock,precioClub,fotoTarjetaOfertaClub,fotoCaruselOfertaClub,fotoDestacado):   #crea el  constructor de la clase
-        self.nombre=nombre   # no hace falta el id porque lo crea sola mysql por ser auto_incremento
-        self.descripcion=descripcion
-        self.fotoTarjeta=fotoTarjeta
-        self.precio=precio
-        self.stock=stock
-        self.precioClub=precioClub
-        self.fotoTarjetaOfertaClub=fotoTarjetaOfertaClub
-        self.fotoCaruselOfertaClub=fotoCaruselOfertaClub
-        self.fotoDestacado=fotoDestacado
-
-
-
 
 
 with app.app_context():
@@ -159,6 +112,7 @@ def update_producto(id):
 
     db.session.commit()    # confirma el cambio
     return producto_schema.jsonify(producto)    # y retorna un json con el producto
+
 
 @app.route('/',methods=['GET'])
 def bienvenida():
