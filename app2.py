@@ -3,27 +3,19 @@ from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 
-import os
-
-
 
 app = Flask(__name__)
-cors = CORS(app, resources={
-    r"/api/*": {
-        "origins": ["https://saraza-wine-club.netlify.app/", "https://saraza-backend.netlify.app/"],
-        "methods": ["GET", "POST", "PUT", "DELETE"],
-        "allow_headers": ["Content-Type", "Authorization"],
-        "expose_headers": ["Content-Type", "Authorization"],
-        "supports_credentials": True,
-        "max_age": 3600,
-    },
-})
-
+# configuro la base de datos, con el nombre el usuario y la clave
+#app.config['SQLALCHEMY_DATABASE_URI']='mysql+pymysql://root:root@localhost:3306/proyecto'
+app.config['SQLALCHEMY_DATABASE_URI']='mysql+pymysql://ThanathosAR:prueba1234@ThanathosAR.mysql.pythonanywhere-services.com/ThanathosAR$proyecto'
+# URI de la BBDD                          driver de la BD  user:clave@URLBBDD/nombreBBDD
+CORS(app) #modulo cors es para que me permita acceder desde el frontend al backend
 # Configuración de la base de datos
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
+#app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 ma = Marshmallow(app)
+
 
 # Modelos
 class Cliente(db.Model):
