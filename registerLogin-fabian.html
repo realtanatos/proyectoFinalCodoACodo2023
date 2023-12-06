@@ -52,12 +52,27 @@
                     </form>
                     <form action="" class="formularioRegistro" id="formularioRegistro">
                         <h2>Registrarse</h2>
-                        <input type="text" id="nombreRegistro" placeholder="Nombre completo" required>
-                        <input type="email" id="emailRegistro" placeholder="Correo Electronico" required>
-                        <!-- <input type="text" id="usuarioRegistro" placeholder="usuario" required> -->
-                        <input type="password" id="passwordRegistro" placeholder="Contraseña" required>
-                        <input type="password" id="passwordRegistro2" placeholder="Confirmar contraseña" required>
-                        <button>Registrarse</button>
+                        <input type="text" id="nombreUsuario" placeholder="Nombre de usuario" name="nombreUsuario" required>
+                        <input type="text" id="nombreRegistro" placeholder="Nombre y apellido" name="nombreApellido" required>
+                        <input type="email" id="emailRegistro" placeholder="Correo Electronico" name="email" required>
+                        <input type="password" id="passwordRegistro" placeholder="Contraseña" name="clave"required>
+                        <input type="password" id="passwordRegistro2" placeholder="Confirmar contraseña" name="confirmarClave" required>
+                        <input type="tel" id="telefonoFijo" placeholder="telefono fijo" name="telefonoFijo">
+                        <input type="tel" id="telefonoCelular" placeholder="Celular" name="telefonoCelular">
+
+                        <label for="miembroClub">¿Miembro del Club?:</label>
+                        <select id="miembroClub" name="miembroClub">
+                        <option value="true">Sí</option>
+                        <option value="false">No</option>
+                        </select>
+
+                        <label for="direccionCliente">Dirección:</label>
+                        <input type="text" id="direccionCliente" name="direccionCliente">
+                        <input type="text" id="pisoDeptoCliente" placeholder="Piso/Dto" name="pisoDeptoCliente">
+                        <input type="text" id="codigoPostalCliente" placeholder="Código postal" name="codigoPostalCliente">
+                        <input type="text" id="localidadCliente" placeholder="Localidad" name="localidadCliente">
+                        <input type="text" id="provinciaCliente" placeholder="Provincia" name="provinciaCliente">
+                        <button type="button" onclick="registrar()">Registrarse</button>
                         <p id="mensajeR" class="mensaje"></p>
                     </form>
                     
@@ -97,7 +112,7 @@
         <script src="./js/menu.js"></script>
         <!-- <script src="./js/index.js"></script> -->
         <script src="js/jRegistroLogin.js"></script>
-        
+        <script src="js/validarlogin.js"></script>
     </div>
 
 </body>
