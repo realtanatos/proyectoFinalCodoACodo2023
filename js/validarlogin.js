@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const API_URL = "https://kerlinfranco.pythonanywhere.com/usuarios";
+    const API_URL = "https://thanathosar.pythonanywhere.com/clientes";
     const emailLogin = document.getElementById("emailLogin");
     const passLogin = document.getElementById("passwordLogin");
 
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     let userFound = false;
 
                     users.forEach((element) => {
-                        if (emailValue === element.email && passValue === element.password) {
+                        if (emailValue === element.email && passValue === element.clave) {
                             userFound = true;
                         }
                     });

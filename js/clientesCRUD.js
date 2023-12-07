@@ -22,7 +22,7 @@ createApp({
     },
     methods: {
         fetchData() {
-            fetch('https://kerlinfranco.pythonanywhere.com/clientes')
+            fetch('https://thanathosar.pythonanywhere.com/clientes')
                 .then(response => response.json())
                 .then(data => {
                     this.clientes = data;
@@ -49,7 +49,7 @@ createApp({
             
             console.log('Nuevo cliente a agregar:', nuevoCliente);
 
-            fetch('https://kerlinfranco.pythonanywhere.com/clientes', {
+            fetch('https://thanathosar.pythonanywhere.com/clientes', {
                 body: JSON.stringify(nuevoCliente),
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' }
@@ -94,7 +94,7 @@ createApp({
         //     });
         },
         eliminarCliente(id) {
-            const url = `https://kerlinfranco.pythonanywhere.com/clientes${id}`;
+            const url = `https://thanathosar.pythonanywhere.com/clientes${id}`;
             var options = {
                 method: 'DELETE',
             };
