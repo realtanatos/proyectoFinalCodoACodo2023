@@ -24,16 +24,19 @@ document.addEventListener("DOMContentLoaded", function () {
                 try {
                     const users = JSON.parse(data);
                     let userFound = false;
-
+                    usuario="" //en caso de que importe si es admi
                     users.forEach((element) => {
                         if (emailValue === element.email && passValue === element.clave) {
                             userFound = true;
+                            usuario=element.nombreUsuario // para lo mismo
                         }
                     });
 
                     if (userFound) {
+                        sessionStorage.setItem('usuario', usuario);// lo mismo de lo anterior
                         console.log("Usuario encontrado. Iniciando sesión correctamente.");
                         alert("Has iniciado sesión correctamente");
+                        window.location.href ='../index.html';
                     } else {
                         console.log("Usuario o contraseña incorrectos.");
                         alert("Usuario o contraseña incorrectos");

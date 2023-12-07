@@ -58,6 +58,7 @@ createApp({
             .then(response => response.json())
             .then(data => {
                 console.log('Cliente creado:', data);
+                window.location.reload();
                 this.fetchData(); // Actualizar la lista después de agregar
             })
             .catch(error => {
