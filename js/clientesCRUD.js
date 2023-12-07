@@ -63,35 +63,7 @@ createApp({
             .catch(error => {
                 console.error('Error al agregar cliente:', error);
             });
-        // agregarCliente() {
-        //     const nuevoCliente = {
-        //         nombreUsuario: this.nombreUsuario,
-        //         nombreApellido: this.nombreApellido,
-        //         email: this.email,
-        //         clave : this.clave,
-        //         telefonoFijo : this.telefonoFijo,
-        //         telefonoCelular : this.telefonoCelular,
-        //         miembroClub : this.miembroClub,
-        //         direccionEnvio : this.direccionEnvio,
-        //         pisoDeptoEnvio : this.pisoDeptoEnvio,
-        //         codigoPostalEnvio : "",
-        //         localidadEnvio : "",
-        //         provinciaEnvio : ""
-        //     };
-
-        //     fetch('https://kerlinfranco.pythonanywhere.com/clientes', {
-        //         method: 'POST',
-        //         headers: { 'Content-Type': 'application/json' },
-        //         body: JSON.stringify(nuevoCliente)
-        //     })
-        //     .then(response => response.json())
-        //     .then(data => {
-        //         console.log('Cliente creado:', data);
-        //         this.fetchData(); // Actualizar la lista después de agregar
-        //     })
-        //     .catch(error => {
-        //         console.error('Error al agregar cliente:', error);
-        //     });
+        
         },
         eliminarCliente(id) {
             const url = `https://thanathosar.pythonanywhere.com/clientes${id}`;
