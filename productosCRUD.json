@@ -1,0 +1,101 @@
+[
+    {
+        "nombreProducto": "Vino Tinto Reserva",
+        "descripcionProducto": "Un vino tinto de alta calidad, envejecido con cuidado para realzar su sabor y aroma.",
+        "fotoTarjetaProducto": "https://saraza-wine-club.netlify.app/imagenes/bodega/vino1.jpg",
+        "precioProducto": 29.99,
+        "stockProducto": 50,
+        "precioClubProducto": 25.99,
+        "fotoTarjetaOfertaClubProducto": "https://saraza-wine-club.netlify.app/imagenes/bodega/vino2.jpg",
+        "fotoCaruselOfertaClubProducto": "https://saraza-wine-club.netlify.app/imagenes/bodega/vino3.jpg",
+        "fotoDestacadoProducto": "https://saraza-wine-club.netlify.app/imagenes/bodega/vino4.jpg"
+    },
+    {
+        "nombreProducto": "Vino Blanco Seco",
+        "descripcionProducto": "Un vino blanco seco con notas frutales y un toque refrescante. Perfecto para acompañar mariscos y platos ligeros.",
+        "fotoTarjetaProducto": "https://saraza-wine-club.netlify.app/imagenes/bodega/vino5.jpg",
+        "precioProducto": 24.99,
+        "stockProducto": 40,
+        "precioClubProducto": 21.99,
+        "fotoTarjetaOfertaClubProducto": "https://saraza-wine-club.netlify.app/imagenes/bodega/vino6.jpg",
+        "fotoCaruselOfertaClubProducto": "https://saraza-wine-club.netlify.app/imagenes/bodega/vino7.jpg",
+        "fotoDestacadoProducto": "https://saraza-wine-club.netlify.app/imagenes/bodega/vino8.jpg"
+    },
+  {
+        "nombreProducto": "Vino Rosado Dulce",
+        "descripcionProducto": "Un vino rosado dulce con aromas florales y frutales. Ideal para disfrutar en momentos de relajación.",
+        "fotoTarjetaProducto": "https://saraza-wine-club.netlify.app/imagenes/bodega/vino9.jpg",
+        "precioProducto": 19.99,
+        "stockProducto": 60,
+        "precioClubProducto": 17.99,
+        "fotoTarjetaOfertaClubProducto": "https://saraza-wine-club.netlify.app/imagenes/bodega/vino10.jpg",
+        "fotoCaruselOfertaClubProducto": "https://saraza-wine-club.netlify.app/imagenes/bodega/vino11.jpg",
+        "fotoDestacadoProducto": "https://saraza-wine-club.netlify.app/imagenes/bodega/vino12.jpg"
+    },
+  {
+        "nombreProducto": "Vino Malbec Reserva",
+        "descripcionProducto": "Un Malbec argentino con cuerpo robusto, taninos suaves y un bouquet complejo. Perfecto para amantes del vino tinto.",
+        "fotoTarjetaProducto": "https://saraza-wine-club.netlify.app/imagenes/bodega/vino13.jpg",
+        "precioProducto": 34.99,
+        "stockProducto": 30,
+        "precioClubProducto": 31.99,
+        "fotoTarjetaOfertaClubProducto": "https://saraza-wine-club.netlify.app/imagenes/bodega/vino14.jpg",
+        "fotoCaruselOfertaClubProducto": "https://saraza-wine-club.netlify.app/imagenes/bodega/vino15.jpg",
+        "fotoDestacadoProducto": "https://saraza-wine-club.netlify.app/imagenes/bodega/vino16.jpg"
+    },
+  {
+        "nombreProducto": "Vino Chardonnay Gran Reserva",
+        "descripcionProducto": "Un Chardonnay de alta gama con elegantes notas de vainilla y frutas tropicales. Ideal para ocasiones especiales.",
+        "fotoTarjetaProducto": "https://saraza-wine-club.netlify.app/imagenes/bodega/vino17.jpg",
+        "precioProducto": 39.99,
+        "stockProducto": 25,
+        "precioClubProducto": 36.99,
+        "fotoTarjetaOfertaClubProducto": "https://saraza-wine-club.netlify.app/imagenes/bodega/vino18.jpg",
+        "fotoCaruselOfertaClubProducto": "https://saraza-wine-club.netlify.app/imagenes/bodega/vino19.jpg",
+        "fotoDestacadoProducto": "https://saraza-wine-club.netlify.app/imagenes/bodega/vino20.jpg"
+    },
+  {
+        "nombreProducto": "Vino Syrah Reserva",
+        "descripcionProducto": "Un Syrah de intensidad aromática y estructura firme. Perfecto para maridar con carnes rojas.",
+        "fotoTarjetaProducto": "https://saraza-wine-club.netlify.app/imagenes/bodega/vino21.jpg",
+        "precioProducto": 32.99,
+        "stockProducto": 35,
+        "precioClubProducto": 29.99,
+        "fotoTarjetaOfertaClubProducto": "https://saraza-wine-club.netlify.app/imagenes/bodega/vino22.jpg",
+        "fotoCaruselOfertaClubProducto": "https://saraza-wine-club.netlify.app/imagenes/bodega/vino23.jpg",
+        "fotoDestacadoProducto": "https://saraza-wine-club.netlify.app/imagenes/bodega/vino24.jpg"
+    },
+  {
+        "nombreProducto": "Vino Sauvignon Blanc",
+        "descripcionProducto": "Un Sauvignon Blanc refrescante con notas cítricas y herbáceas. Ideal para disfrutar en climas cálidos.",
+        "fotoTarjetaProducto": "https://saraza-wine-club.netlify.app/imagenes/bodega/vino25.jpg",
+        "precioProducto": 21.99,
+        "stockProducto": 45,
+        "precioClubProducto": 18.99,
+        "fotoTarjetaOfertaClubProducto": "https://saraza-wine-club.netlify.app/imagenes/bodega/vino1.jpg",
+        "fotoCaruselOfertaClubProducto": "https://saraza-wine-club.netlify.app/imagenes/bodega/vino2.jpg",
+        "fotoDestacadoProducto": "https://saraza-wine-club.netlify.app/imagenes/bodega/vino3.jpg"
+    },
+  {
+        "nombreProducto": "Vino Merlot Reserva",
+        "descripcionProducto": "Un Merlot suave y equilibrado con notas frutales y taninos redondos. Perfecto para maridar con quesos suaves.",
+        "fotoTarjetaProducto": "https://saraza-wine-club.netlify.app/imagenes/bodega/vino4.jpg",
+        "precioProducto": 27.99,
+        "stockProducto": 28,
+        "precioClubProducto": 24.99,
+        "fotoTarjetaOfertaClubProducto": "https://saraza-wine-club.netlify.app/imagenes/bodega/vino5.jpg",
+        "fotoCaruselOfertaClubProducto": "https://saraza-wine-club.netlify.app/imagenes/bodega/vino6.jpg",
+        "fotoDestacadoProducto": "https://saraza-wine-club.netlify.app/imagenes/bodega/vino7.jpg"
+    },
+  {
+        "nombreProducto": "Vino Pinot Noir",
+        "descripcionProducto": "Un Pinot Noir elegante con notas de frutas rojas y un final suave. Perfecto para los amantes de vinos ligeros.",
+        "fotoTarjetaProducto": "https://saraza-wine-club.netlify.app/imagenes/bodega/vino8.jpg",
+        "precioProducto": 36.99,
+        "stockProducto": 20,
+        "precioClubProducto": 33.99,
+        "fotoTarjetaOfertaClubProducto": "https://saraza-wine-club.netlify.app/imagenes/bodega/vino5.jpg",
+        "fotoCaruselOfertaClubProducto": "https://saraza-wine-club.netlify.app/imagenes/bodega/vino6.jpg",
+        "fotoDestacadoProducto": "https://saraza-wine-club.netlify.app/imagenes/bodega/vino7.jpg"
+    }
+]
