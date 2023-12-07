@@ -42,6 +42,7 @@
                     </div>
                     
                 </div>
+                <!-- login -->
                 <div class="contenedorFormLoginRegistro">
                     <form action="" class="formularioLogin" id="formularioLogin">
                         <h2>Iniciar Sesión</h2>
@@ -50,14 +51,29 @@
                         <button>Entrar</button>
                         <p id="mensajeL" class="mensaje"></p>
                     </form>
-                    <form action="" class="formularioRegistro" id="formularioRegistro">
+                    <!-- registro -->
+                    <form action="" class="formularioRegistro" id="formularioRegistro" @submit.prevent="agregarCliente">
                         <h2>Registrarse</h2>
-                        <input type="text" id="nombreRegistro" placeholder="Nombre completo" required>
-                        <input type="email" id="emailRegistro" placeholder="Correo Electronico" required>
-                        <!-- <input type="text" id="usuarioRegistro" placeholder="usuario" required> -->
-                        <input type="password" id="passwordRegistro" placeholder="Contraseña" required>
-                        <input type="password" id="passwordRegistro2" placeholder="Confirmar contraseña" required>
-                        <button>Registrarse</button>
+                        <input type="text" v-model="nombreUsuario" id="nombreUsuario" placeholder="Nombre de usuario" name="nombreUsuario" required>
+                        <input type="text" v-model="nombreApellido" id="nombreRegistro" placeholder="Nombre y apellido" name="nombreApellido" required>
+                        <input type="email" v-model="email" id="emailRegistro" placeholder="Correo Electronico" name="email" required>
+                        <input type="password" v-model="clave" id="passwordRegistro" placeholder="Contraseña" name="clave"required>
+                        <input type="password"  id="passwordRegistro2" placeholder="Confirmar contraseña" name="confirmarClave" required>
+                        <input type="tel" v-model="telefonoFijo" id="telefonoFijo" placeholder="telefono fijo" name="telefonoFijo">
+                        <input type="tel" v-model="telefonoCelular" id="telefonoCelular" placeholder="Celular" name="telefonoCelular">
+
+                        <label for="miembroClub">¿Miembro del Club?:</label>
+                        <select v-model="miembroClub" id="miembroClub" name="miembroClub">
+                        <option value="true">Sí</option>
+                        <option value="false">No</option>
+                        </select>
+
+                        <input type="text" v-model="direccionCliente" id="direccionCliente" placeholder="Dirección" name="direccionCliente">
+                        <input type="text" v-model="pisoDeptoCliente" id="pisoDeptoCliente" placeholder="Piso/Dto" name="pisoDeptoCliente">
+                        <input type="text" v-model="codigoPostalCliente" id="codigoPostalCliente" placeholder="Código postal" name="codigoPostalCliente">
+                        <input type="text" v-model="localidadCliente" id="localidadCliente" placeholder="Localidad" name="localidadCliente">
+                        <input type="text" v-model="provinciaCliente" id="provinciaCliente" placeholder="Provincia" name="provinciaCliente">
+                        <button type="submit" v-on:click="agregarCliente()">Registrarse</button>
                         <p id="mensajeR" class="mensaje"></p>
                     </form>
                     
@@ -95,9 +111,10 @@
         </footer>
         <script src="js/validarRegistroLogin.js"></script>
         <script src="./js/menu.js"></script>
-        <!-- <script src="./js/index.js"></script> -->
         <script src="js/jRegistroLogin.js"></script>
-        
+        <script src="js/validarlogin.js"></script>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script><!--Link de VUE-->
+        <script src="./js/clientesCRUD.js" defer></script>
     </div>
 
 </body>

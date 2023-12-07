@@ -12,7 +12,7 @@ createApp({
             clave : "",
             telefonoFijo : "",
             telefonoCelular : "",
-            miembroClub : False,
+            miembroClub : false,
             direccionCliente : "",
             pisoDeptoCliente : "",
             codigoPostalCliente : "",
@@ -36,21 +36,24 @@ createApp({
                 nombreUsuario: this.nombreUsuario,
                 nombreApellido: this.nombreApellido,
                 email: this.email,
-                clave : this.clave,
-                telefonoFijo : this.telefonoFijo,
-                telefonoCelular : this.telefonoCelular,
-                miembroClub : this.miembroClub,
-                direccionEnvio : this.direccionEnvio,
-                pisoDeptoEnvio : this.pisoDeptoEnvio,
-                codigoPostalEnvio : "",
-                localidadEnvio : "",
-                provinciaEnvio : ""
+                clave: this.clave,
+                telefonoFijo: this.telefonoFijo,
+                telefonoCelular: this.telefonoCelular,
+                miembroClub: this.miembroClub, // Convertir a booleano
+                direccionCliente: this.direccionCliente,
+                pisoDeptoCliente: this.pisoDeptoCliente,
+                codigoPostalCliente: this.codigoPostalCliente,
+                localidadCliente: this.localidadCliente,
+                provinciaCliente: this.provinciaCliente
             };
+            
+            console.log('Nuevo cliente a agregar:', nuevoCliente);
 
             fetch('https://thanathosar.pythonanywhere.com/clientes', {
+                body: JSON.stringify(nuevoCliente),
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(nuevoCliente)
+                headers: { 'Content-Type': 'application/json' }
+                
             })
             .then(response => response.json())
             .then(data => {
@@ -60,9 +63,38 @@ createApp({
             .catch(error => {
                 console.error('Error al agregar cliente:', error);
             });
+        // agregarCliente() {
+        //     const nuevoCliente = {
+        //         nombreUsuario: this.nombreUsuario,
+        //         nombreApellido: this.nombreApellido,
+        //         email: this.email,
+        //         clave : this.clave,
+        //         telefonoFijo : this.telefonoFijo,
+        //         telefonoCelular : this.telefonoCelular,
+        //         miembroClub : this.miembroClub,
+        //         direccionEnvio : this.direccionEnvio,
+        //         pisoDeptoEnvio : this.pisoDeptoEnvio,
+        //         codigoPostalEnvio : "",
+        //         localidadEnvio : "",
+        //         provinciaEnvio : ""
+        //     };
+
+        //     fetch('https://kerlinfranco.pythonanywhere.com/clientes', {
+        //         method: 'POST',
+        //         headers: { 'Content-Type': 'application/json' },
+        //         body: JSON.stringify(nuevoCliente)
+        //     })
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         console.log('Cliente creado:', data);
+        //         this.fetchData(); // Actualizar la lista después de agregar
+        //     })
+        //     .catch(error => {
+        //         console.error('Error al agregar cliente:', error);
+        //     });
         },
         eliminarCliente(id) {
-            const url = `https://thanathosar.pythonanywhere.com/clientes/${id}`;
+            const url = `https://thanathosar.pythonanywhere.com/clientes${id}`;
             var options = {
                 method: 'DELETE',
             };
@@ -81,4 +113,4 @@ createApp({
     created() {
         this.fetchData();
     },
-}).mount('#app');
+}).mount('#formularioRegistro');
