@@ -18,14 +18,12 @@
             <div class="container" id="app">
                 <form action="" class="formularioRegistro" id="formularioRegistro" @submit.prevent=" modificar">
                     <h2>Registrarse</h2>
-                    <input type="text" v-model="nombreUsuario" id="nombreUsuario" placeholder="Nombre de usuario" name="nombreUsuario" required>
+                    <input type="text" v-model="nombreUsuario" id="nombreUsuario" placeholder="Nombre de usuario"  name="nombreUsuario" required>
                     <input type="text" v-model="nombreApellido" id="nombreRegistro" placeholder="Nombre y apellido" name="nombreApellido" required>
-                    <input type="email" v-model="email" id="emailRegistro" placeholder="Correo Electronico" name="email" required>
-                    <input type="password" v-model="clave" id="passwordRegistro" placeholder="Contraseña" name="clave"required>
-                    <input type="password"  id="passwordRegistro2" placeholder="Confirmar contraseña" name="confirmarClave" required>
+                    <input type="email" v-model="email" id="email" placeholder="Correo Electronico" name="email" required>
+                    <input type="password" v-model="clave" id="clave" placeholder="Contraseña" name="clave"required>
                     <input type="tel" v-model="telefonoFijo" id="telefonoFijo" placeholder="telefono fijo" name="telefonoFijo">
                     <input type="tel" v-model="telefonoCelular" id="telefonoCelular" placeholder="Celular" name="telefonoCelular">
-            
                     <label for="miembroClub">¿Miembro del Club?:</label>
                     <select v-model="miembroClub" id="miembroClub" name="miembroClub">
                     <option value="true">Sí</option>
@@ -54,7 +52,7 @@
             crossorigin="anonymous"> </script>
         <script src="./js/main.js"></script>
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-        <script src="./js/productoCRUD_editar.js"></script>
+        <script src="./js/clientesCRUD_editar.js"></script>
     </body>
 
     </html>
