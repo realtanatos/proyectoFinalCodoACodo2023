@@ -40,6 +40,7 @@ createApp({
                     }else{
                         this.miembroClub=false;
                     }
+                    console.log(this.clave)
                     this.direccionCliente = data.direccionCliente;
                     this.pisoDeptoCliente = data.pisoDeptoCliente;
                     this.codigoPostalCliente = data.codigoPostalCliente;
@@ -54,6 +55,7 @@ createApp({
                 });
         },
         modificar() {
+            console.log("1")
             let cliente = {
                 id: this.id,
                 nombreUsuario: this.nombreUsuario,
@@ -92,6 +94,7 @@ createApp({
         }
     },
     created() {
+        console.log(this.url)
         this.fetchData(this.url);
     },
 }).mount('#formularioRegistro');

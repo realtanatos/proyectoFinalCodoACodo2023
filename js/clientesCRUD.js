@@ -39,7 +39,7 @@ createApp({
                 clave: this.clave,
                 telefonoFijo: this.telefonoFijo,
                 telefonoCelular: this.telefonoCelular,
-                miembroClub: this.miembroClub, // Convertir a booleano
+                miembroClub: true, // Convertir a booleano
                 direccionCliente: this.direccionCliente,
                 pisoDeptoCliente: this.pisoDeptoCliente,
                 codigoPostalCliente: this.codigoPostalCliente,

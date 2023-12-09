@@ -420,6 +420,8 @@ display: block;
 }
 
 .formularioRegistro {
+    height: 24em;
+    overflow: scroll;
     bottom: -150px;
     display: none;
 
