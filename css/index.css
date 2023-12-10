@@ -822,6 +822,8 @@ h1 {
     
 }
 
+
+
 .navheader {
     margin: 10px;
     background-color: rgb(224, 224, 224);
@@ -844,6 +846,9 @@ nav a {
 
 }
 
+#admi{
+    display: none;
+}
 /* Finde Tomado de clase 6 CSS2 */
 
 /* El Call To Action del Hero Section */

@@ -51,4 +51,5 @@ document.addEventListener("DOMContentLoaded", function () {
                 alert("Hubo un error al intentar iniciar sesión. Por favor, inténtalo de nuevo.");
             });
     });
+    
 });

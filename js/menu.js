@@ -7,7 +7,8 @@ let cad = `
             <a class="navheader" href="tienda-fabian.html">Tienda</a>
             <a class="navheader" href="carrito-fabian.html">Carrito</a>
             <a class="navheader" href="registerLogin-fabian.html">Login</a>
-            <a class="navheader" href="quienesSomos-fabian.html">Quienes Somos</a>
+            <a class="navheader" href="quienesSomos-fabian.html">¿Quiénes somos?</a>
+            <a class="navheader" id="admi" href="productos.html">Administrar</a>
         </menunav> `
 
 document.querySelector("header").innerHTML = cad
@@ -20,6 +21,9 @@ cad = `
 
 
 document.querySelector("footer").innerHTML = cad
-
-
+console.log(sessionStorage.getItem('usuario'))
+if(sessionStorage.getItem('usuario')=="Franco"){
+        let aministrar=document.querySelector("#admi");
+        aministrar.style.display="block";
+}
       
