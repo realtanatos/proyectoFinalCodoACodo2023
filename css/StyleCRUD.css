@@ -1,4 +1,111 @@
-:root{
+*{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+
+}
+
+
+body{
+    background-color: rgb(206, 203, 204);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    /* para que la img ocupetoda la pantalla*/
+    
+}
+main{
+    width: 100%;
+    padding: 20px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+footer{
+    background-color: azure;
+}
+
+.contenedorForm{
+    width:100%;
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+}
+
+
+
+.fomulario div{
+    margin: 100px 40px;
+    color: white;
+    
+}
+.fomulario div p,
+.fomulario div button{
+margin: 30px;
+}
+.fomulario div h3{
+    font-weight: 400;
+    font-size: 30px;
+}
+.fomulario button{
+    padding: 10px 40px;
+    border: 2px solid white;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    outline: none;
+    transition: 300ms;
+}
+
+
+.contenedorLoginRegistro{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 320px;
+    position: relative;
+    top: -220px;
+    left: 10px;
+    transition:left 300ms;
+}
+
+
+.formularioRegistro{
+    width: 100%;
+    padding: 80px 20px;
+    background: rgb(253, 252, 252);
+    position: absolute;
+    border-radius: 20px;
+}
+
+.formularioRegistro h2{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgb(151, 46, 90);
+}
+
+.formularioRegistro input{
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background: rgb(231, 227, 230);
+    font-size: 16px;
+    outline: none;
+}
+
+.formularioRegistro button{
+    padding: 10px 40px;
+    margin-top: 40px;
+    border-radius: 10px;
+    border: none;
+    font-size: 14px;
+    background: rgb(151, 46, 90);
+    cursor: pointer;
+    outline: none;
 }

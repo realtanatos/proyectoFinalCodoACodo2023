@@ -5,48 +5,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <!-- Enlaces a hojas de estilo, scripts 
     
     DE NUEVO ESTE REGISTROCRUD TIENE EL FORMULARIO CON LOS CAMPOS DE REGISTRO
     DE CLIENTE QUE PUSE EN LAS TABLAS ASI QUE SOLO DEBEN ADAPTARLO A SUS FRONTENDS
 
     -->
-
+    <link rel="stylesheet" href="css/StyleCRUD.css">
 </head>
 
 <body>
-    <h2>Registro</h2>
+    <div class="contenedor">
+        <header id="header">
 
-    <form action="" class="formularioRegistro" id="formularioRegistro" @submit.prevent="agregarCliente">
-        <h2>Registrarse</h2>
-        <input type="text" v-model="nombreUsuario" id="nombreUsuario" placeholder="Nombre de usuario" name="nombreUsuario" required>
-        <input type="text" v-model="nombreApellido" id="nombreRegistro" placeholder="Nombre y apellido" name="nombreApellido" required>
-        <input type="email" v-model="email" id="emailRegistro" placeholder="Correo Electronico" name="email" required>
-        <input type="password" v-model="clave" id="passwordRegistro" placeholder="Contraseña" name="clave"required>
-        <input type="password"  id="passwordRegistro2" placeholder="Confirmar contraseña" name="confirmarClave" required>
-        <input type="tel" v-model="telefonoFijo" id="telefonoFijo" placeholder="telefono fijo" name="telefonoFijo">
-        <input type="tel" v-model="telefonoCelular" id="telefonoCelular" placeholder="Celular" name="telefonoCelular">
 
-        <label for="miembroClub">¿Miembro del Club?:</label>
-        <select v-model="miembroClub" id="miembroClub" name="miembroClub">
-        <option value="true">Sí</option>
-        <option value="false">No</option>
-        </select>
+        </header><br>
+        
+        <div class="contenedorForm">
+           
+            <div class="fomulario">
+            <form action="" class="formularioRegistro" id="formularioRegistro" @submit.prevent="agregarCliente">
+                <h2>Registro</h2>
+                <input type="text" v-model="nombreUsuario" id="nombreUsuario" placeholder="Nombre de usuario"
+                    name="nombreUsuario" required>
+                <input type="text" v-model="nombreApellido" id="nombreRegistro" placeholder="Nombre y apellido"
+                    name="nombreApellido" required>
+                <input type="email" v-model="email" id="emailRegistro" placeholder="Correo Electronico" name="email"
+                    required>
+                <input type="password" v-model="clave" id="passwordRegistro" placeholder="Contraseña" name="clave"
+                    required>
+                <input type="password" id="passwordRegistro2" placeholder="Confirmar contraseña" name="confirmarClave"
+                    required>
+                <input type="tel" v-model="telefonoFijo" id="telefonoFijo" placeholder="telefono fijo"
+                    name="telefonoFijo">
+                <input type="tel" v-model="telefonoCelular" id="telefonoCelular" placeholder="Celular"
+                    name="telefonoCelular">
 
-        <input type="text" v-model="direccionCliente" id="direccionCliente" placeholder="Dirección" name="direccionCliente">
-        <input type="text" v-model="pisoDeptoCliente" id="pisoDeptoCliente" placeholder="Piso/Dto" name="pisoDeptoCliente">
-        <input type="text" v-model="codigoPostalCliente" id="codigoPostalCliente" placeholder="Código postal" name="codigoPostalCliente">
-        <input type="text" v-model="localidadCliente" id="localidadCliente" placeholder="Localidad" name="localidadCliente">
-        <input type="text" v-model="provinciaCliente" id="provinciaCliente" placeholder="Provincia" name="provinciaCliente">
-        <button type="submit" v-on:click="agregarCliente()">Registrarse</button>
-        <p id="mensajeR" class="mensaje"></p>
-    </form>
+                <input type="text" v-model="direccionCliente" id="direccionCliente" placeholder="Dirección"
+                    name="direccionCliente">
+                <input type="text" v-model="pisoDeptoCliente" id="pisoDeptoCliente" placeholder="Piso/Dto"
+                    name="pisoDeptoCliente">
+                <input type="text" v-model="codigoPostalCliente" id="codigoPostalCliente" placeholder="Código postal"
+                    name="codigoPostalCliente">
+                <input type="text" v-model="localidadCliente" id="localidadCliente" placeholder="Localidad"
+                    name="localidadCliente">
+                <input type="text" v-model="provinciaCliente" id="provinciaCliente" placeholder="Provincia"
+                    name="provinciaCliente">
+                <button type="submit" v-on:click="agregarCliente()">Registrarse</button>
+                <p id="mensajeR" class="mensaje"></p>
+            </form>
+        </div>
+        </div>
+        <!-- Enlace para volver al inicio de sesión -->
+        <!-- <p>¿Ya tienes una cuenta? <a href="loginCRUD.html">Inicia Sesión</a></p> -->
 
-    <!-- Enlace para volver al inicio de sesión -->
-    <p>¿Ya tienes una cuenta? <a href="loginCRUD.html">Inicia Sesión</a></p>
-
-    <!-- Scripts y otros enlaces a recursos adicionales -->
-
+        <!-- Scripts y otros enlaces a recursos adicionales -->
+    </div>
     <footer>
     </footer>
     <!--Link de Bootstrap-->
@@ -61,7 +78,8 @@
     <script src="./js/clientesCRUD.js" defer></script>
     <!-- con el DEFER nos aseguramos por codigo que el script se ejecuta
         despues de que cargue el html -->
-    <script src=""></script>    
+
+
 </body>
 
 </html>
