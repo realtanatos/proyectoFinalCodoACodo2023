@@ -51,15 +51,15 @@ const { createApp } = Vue
 
         grabar(){
             let producto = {
-                nombre:this.nombre,
-                descripcion:this.descripcion,
-                fotoTarjeta:this.fotoTarjeta,
-                precio:this.precio,
-                stock:this.stock,
-                precioClub:this.precioClub,
-                fotoTarjetaOfertaClub:this.fotoTarjetaOfertaClub,
-                fotoCaruselOfertaClub:this.fotoCaruselOfertaClub,
-                fotoDestacado:this.fotoDestacado
+                nombreProducto:this.nombre,
+                descripcionProducto:this.descripcion,
+                fotoTarjetaProducto:this.fotoTarjeta,
+                precioProducto:this.precio,
+                stockProducto:this.stock,
+                precioClubProducto:this.precioClub,
+                fotoTarjetaOfertaClubProducto:this.fotoTarjetaOfertaClub,
+                fotoCaruselOfertaClubProducto:this.fotoCaruselOfertaClub,
+                fotoDestacadoProducto:this.fotoDestacado
             }
             console.log(producto);     
             var options = {

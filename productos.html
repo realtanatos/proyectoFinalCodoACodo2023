@@ -45,23 +45,23 @@
                             </thead>
                             <tbody>
                                 <tr class=""  v-for="producto in productos">
-                                    <td scope="row">{{producto.id}}</td>
-                                    <td>{{producto.nombre}}</td>
-                                    <td>{{producto.descripcion}}</td>
+                                    <td scope="row">{{producto.productoId}}</td>
+                                    <td>{{producto.nombreProducto}}</td>
+                                    <td>{{producto.descripcionProducto}}</td>
                                     <td>
-                                        <img width="60"  :src="producto.fotoTarjeta" :alt="producto.nombre">
+                                        <img width="60"  :src="producto.fotoTarjetaProducto" :alt="producto.nombreProducto">
                                     </td>
-                                    <td>{{producto.precio}}</td>
-                                    <td>{{producto.stock}}</td>
-                                    <td>{{producto.precioClub}}</td>
+                                    <td>{{producto.precioProducto}}</td>
+                                    <td>{{producto.stockProducto}}</td>
+                                    <td>{{producto.precioClubProducto}}</td>
                                     <td>
-                                        <img width="60"  :src="producto.fotoTarjetaOfertaClub" :alt="producto.nombre">
-                                    </td>
-                                    <td>
-                                        <img width="60"  :src="producto.fotoCaruselOfertaClub" :alt="producto.nombre">
+                                        <img width="60"  :src="producto.fotoTarjetaOfertaClubProducto" :alt="producto.nombreProducto">
                                     </td>
                                     <td>
-                                        <img width="60"  :src="producto.fotoDestacado" :alt="producto.nombre">
+                                        <img width="60"  :src="producto.fotoCaruselOfertaClubProducto" :alt="producto.nombreProducto">
+                                    </td>
+                                    <td>
+                                        <img width="60"  :src="producto.fotoDestacadoProducto" :alt="producto.nombreProducto">
                                     </td>
                                     <td>
                     			<a class="btn btn-primary" :href="'producto_update.html?id='+ producto.id" >Editar</a>

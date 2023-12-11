@@ -1,19 +1,19 @@
 const contenedorTarjetas = document.getElementById("productos-container");
-
+const URL='https://thanathosar.pythonanywhere.com/productos';
 
 function crearTarjetasProductosInicio(productos){
   productos.forEach(producto => {
     const nuevoVino = document.createElement("div");
     nuevoVino.classList = "tarjeta-producto"
     nuevoVino.innerHTML = `
-    <img src="imagenes/bodega/vino${producto.id}.jpg" alt="Vinos" class="card">
-    <h3>${producto.nombre}</h3>
+    <img src=${producto.fotoTarjetaProducto} alt="Vinos" class="card">
+    <h3>${producto.nombreProducto}</h3>
     <span class="descripTienda">
-     <p>${producto.descripcion}</p>
-      <p class="stock">${producto.stock}</p>
+     <p>${producto.descripcionProducto}</p>
+      <p class="stock">${producto.stockProducto}</p>
     <button>Agregar al carrito</button>
     </span>
-    <p class="precio">$${producto.precio}</p><br>
+    <p class="precio">$${producto.precioClubProducto}</p><br>
     
     `
 
@@ -23,7 +23,7 @@ function crearTarjetasProductosInicio(productos){
 }
 
 
-fetch('vinosLocal.json') 
+fetch(URL) 
         .then(response => response.json())
         .then(data => {
 
