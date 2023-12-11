@@ -67,10 +67,13 @@ createApp({
         
         },
         eliminarCliente(id) {
-            const url = `https://thanathosar.pythonanywhere.com/clientes${id}`;
+           
+            const url = `https://thanathosar.pythonanywhere.com/clientes/${id}`;
             var options = {
                 method: 'DELETE',
+                
             };
+            console.log("entra ")
             fetch(url, options)
                 .then(res => res.json())
                 .then(res => {
