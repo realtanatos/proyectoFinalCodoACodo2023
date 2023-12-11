@@ -32,6 +32,7 @@ createApp({
                 });
         },
         agregarCliente() {
+            console.log("Formulario enviado");
             const nuevoCliente = {
                 nombreUsuario: this.nombreUsuario,
                 nombreApellido: this.nombreApellido,
@@ -39,7 +40,7 @@ createApp({
                 clave: this.clave,
                 telefonoFijo: this.telefonoFijo,
                 telefonoCelular: this.telefonoCelular,
-                miembroClub: true, // Convertir a booleano
+                miembroClub: Boolean(this.miembroClub), // Convertir a booleano
                 direccionCliente: this.direccionCliente,
                 pisoDeptoCliente: this.pisoDeptoCliente,
                 codigoPostalCliente: this.codigoPostalCliente,

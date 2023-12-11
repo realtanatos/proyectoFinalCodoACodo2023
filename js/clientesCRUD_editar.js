@@ -38,7 +38,7 @@ createApp({
                     if (data.miembroClub==1){
                         this.miembroClub=true;
                     }else{
-                        this.miembroClub=false;
+                        this.miembroClub=true;
                     }
                     console.log(this.clave)
                     this.direccionCliente = data.direccionCliente;
