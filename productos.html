@@ -64,8 +64,8 @@
                                         <img width="60"  :src="producto.fotoDestacadoProducto" :alt="producto.nombreProducto">
                                     </td>
                                     <td>
-                    			<a class="btn btn-primary" :href="'producto_update.html?id='+ producto.id" >Editar</a>
-                                      <button type="button" class="btn btn-danger" v-on:click="eliminar(producto.id)" >Eliminar</button>
+                    			<a class="btn btn-primary" :href="'producto_update.html?id='+ producto.productoId" >Editar</a>
+                                      <button type="button" class="btn btn-danger" v-on:click="eliminar(producto.productoId)" >Eliminar</button>
                                     </td>
                                 </tr>
                             </tbody>

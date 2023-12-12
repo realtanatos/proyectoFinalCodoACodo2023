@@ -179,39 +179,77 @@ body {
 }
 
 /*Inicio tienda*/
-.productos{
-    
-}
-.tarjeta-producto{
-    border: 1px solid;
-    margin: 10px;
-    padding: 0px;
-    width: 200px; /* Ajusta el ancho según tus necesidades */
-    display: inline-block;
-    
-  
+.tituloTienda {
+    background-color: rgb(151, 46, 90);
+    margin: 40px;
+    padding: 40px;
+    color: #fff;
+    border-radius: 30px;
 }
 
-.card{
+.tarjeta-producto {
+
+margin: 10px;
+
+padding: 10px;
+
+width: 100%;
+
+display: flex;
+
+align-items: center;
+
+box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card {
     /*Esto es de la img*/
-    width: 97%;
-    object-fit: contain;
+    max-width: 40%;
+    margin-right: 1%;
 
 }
-.descripTienda{
-    display:none;
-    
+
+.descripTienda,
+.stock {
+    margin: 10px;
+    display: none;
+
+}
+#bComprar{
+    outline: none;
+    border: 1px solid #fff;
+    color: #ddd;
+    padding: 10px;
+    margin: 15px;
+    font-size: 20px;
+    background-color: rgb(151, 46, 90);
+    border-radius: 20px;
 }
 
-.tarjeta-producto:hover{
-   width: 85%;
-  
-    .descripTienda{
-        display:block;
-        
+#bComprar:hover {
+    font-size: 25px;
+    background-color: rgb(179, 83, 155);
+
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2);
+}
+
+.precio {
+    margin: 10px;
+    font-size: 20px;
+}
+
+.tarjeta-producto:hover {
+    width: 100%;
+
+    .descripTienda,
+    .stock {
+        display: block;
+
     }
 
 }
+
+
 /*Fin tienda*/
 
 /* Inicio Login Registro */
