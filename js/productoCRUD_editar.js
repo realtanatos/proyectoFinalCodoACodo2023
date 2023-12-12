@@ -16,6 +16,7 @@ const { createApp } = Vue
         fotoCaruselOfertaClub:"",
         fotoDestacado:"",
         url:'https://thanathosar.pythonanywhere.com/productos/'+id,
+        imagen:"",
        }  
     },
     methods: {
@@ -24,16 +25,16 @@ const { createApp } = Vue
                 .then(response => response.json())
                 .then(data => {
                     console.log(data)
-                    this.id=data.id
-                    this.nombre=data.nombre,
-                    this.descripcion=data.descripcion,
-                    this,fotoTarjeta=data.fotoTarjeta,
-                    this.precio=data.precio,
-                    this.stock=data.stock,
-                    this.precioClub=data.precioClub,
-                    this.fotoTarjetaOfertaClub=data.fotoTarjetaOfertaClub,
-                    this.fotoCaruselOfertaClub=data.fotoCaruselOfertaClub,
-                    this.fotoDestacado=data.fotoDestacado
+                    this.id=data.productoId,
+                    this.nombre=data.nombreProducto,
+                    this.descripcion=data.descripcionProducto,
+                    this.fotoTarjeta=data.fotoTarjetaProducto,
+                    this.precio=data.precioProducto,
+                    this.stock=data.stockProducto,
+                    this.precioClub=data.precioClubProducto,
+                    this.fotoTarjetaOfertaClub=data.fotoTarjetaOfertaClubProducto,
+                    this.fotoCaruselOfertaClub=data.fotoCaruselOfertaClubProducto,
+                    this.fotoDestacado=data.fotoDestacadoProducto
 
                 })
                 .catch(err => {
@@ -44,15 +45,16 @@ const { createApp } = Vue
         },
         modificar() {
             let producto = {
-                nombre:this.nombre,
-                descripcion:this.descripcion,
-                fotoTarjeta:this,fotoTarjeta,
-                precio:this.precio,
-                stock:this.stock,
-                precioClub:this.precioClub,
-                fotoTarjetaOfertaClub:this.fotoTarjetaOfertaClub,
-                fotoCaruselOfertaClub:this.fotoCaruselOfertaClub,
-                fotoDestacado:this.fotoDestacado
+                nombreProducto:this.nombre,
+                descripcionProducto:this.descripcion,
+                fotoTarjetaProducto:this,fotoTarjeta,
+                precioProducto:this.precio,
+                stockProducto:this.stock,
+                precioClubProducto:this.precioClub,
+                fotoTarjetaOfertaClubProducto:this.fotoTarjetaOfertaClub,
+                fotoCaruselOfertaClubProducto:this.fotoCaruselOfertaClub,
+                fotoDestacadoProducto:this.fotoDestacado
+                
             }
             var options = {
                 body: JSON.stringify(producto),
@@ -62,6 +64,7 @@ const { createApp } = Vue
             }
             fetch(this.url, options)
                 .then(function () {
+                    console.log(producto)
                     alert("Registro modificado")
                     window.location.href = "./productos.html"; // navega a productos.html          
                 })
