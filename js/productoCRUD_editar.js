@@ -45,17 +45,16 @@ const { createApp } = Vue
         },
         modificar() {
             let producto = {
-                nombreProducto:this.nombre,
-                descripcionProducto:this.descripcion,
-                fotoTarjetaProducto:this,fotoTarjeta,
-                precioProducto:this.precio,
-                stockProducto:this.stock,
-                precioClubProducto:this.precioClub,
-                fotoTarjetaOfertaClubProducto:this.fotoTarjetaOfertaClub,
-                fotoCaruselOfertaClubProducto:this.fotoCaruselOfertaClub,
-                fotoDestacadoProducto:this.fotoDestacado
-                
-            }
+                nombreProducto: this.nombre,
+                descripcionProducto: this.descripcion,
+                fotoTarjetaProducto: this.fotoTarjeta,
+                precioProducto: this.precio,
+                stockProducto: this.stock,
+                precioClubProducto: this.precioClub,
+                fotoTarjetaOfertaClubProducto: this.fotoTarjetaOfertaClub,
+                fotoCaruselOfertaClubProducto: this.fotoCaruselOfertaClub,
+                fotoDestacadoProducto: this.fotoDestacado
+              };
             var options = {
                 body: JSON.stringify(producto),
                 method: 'PUT',
