@@ -333,12 +333,9 @@ box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.2);
 }
 
 .contenedorLoginRegistro {
-    
     width: 100%;
     max-width: 800px;
     margin: auto;
-    position: relative;
-
 }
 
 .cajaAtras {
@@ -348,21 +345,13 @@ box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* backdrop-filter: blur(10px); */
-    /* background-color:rgba(29, 29, 28, 0.5); */
-    background:linear-gradient(rgb(26, 3, 8), rgb(151, 46, 90)) ;
+    background: linear-gradient(rgb(26, 3, 8), rgb(151, 46, 90));
     border-radius: 15px;
 }
 
 .cajaAtras div {
-    top: 40px;
-    left: 25%;
-    margin: 0px;
-    padding: 30px;
-    position: absolute;
-    /* margin: 100px 40px; */
+    text-align: center; /* Centrar el contenido */
     color: white;
-    /* transition: all 500ms;  */
 }
 
 .cajaAtras div p,
@@ -386,22 +375,13 @@ box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.2);
     outline: none;
     transition: 300ms;
 }
-/* Agrega estas reglas al final de tu archivo CSS */
-.cajaRegistro {
-    opacity: 1;
-    display: block;
-    margin-top: 20px; /* Agrega un margen superior para separar del elemento superior */
-}
 
-.cajaLogin {
-    opacity: 1;
-    display: inline-block;
-    margin-top: 20px; /* Agrega un margen superior para separar del elemento superior */
-}
-
+.cajaRegistro,
+.cajaLogin,
 .cajaAtrasRegistro {
-    opacity: 1;
-    display: inline-block;
+    width: 100%;
+    max-width: 350px;
+    margin: 20px auto;
 }
 
 .cajaAtras button:hover {
@@ -411,21 +391,19 @@ box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.2);
 
 .contenedorFormLoginRegistro {
     display: flex;
+    flex-direction: column;
     align-items: center;
     width: 100%;
     max-width: 350px;
-    position: relative;
-    top: -220px;
-    left: 10%;
-    
+    margin: auto;
 }
 
 .contenedorFormLoginRegistro form {
     width: 100%;
     padding: 60px 40px;
     background: rgb(255, 255, 255);
-    position: absolute;
     border-radius: 20px;
+    border: none; /* Eliminar el borde */
 }
 
 .contenedorFormLoginRegistro form h2 {
@@ -455,13 +433,10 @@ box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     outline: none;
 }
-.formularioLogin{
-    
-/* margin: 10px; */
-    
-opacity: 1;
-    
-display: block;
+
+.formularioLogin {
+    opacity: 1;
+    display: block;
 }
 
 .formularioRegistro {
@@ -469,9 +444,7 @@ display: block;
     overflow: auto;
     bottom: -150px;
     display: none;
-
 }
-
 
 .mensaje {
     margin: 10px;
