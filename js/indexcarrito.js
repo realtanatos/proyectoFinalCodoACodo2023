@@ -1,35 +1,33 @@
 const contenedorTarjetas = document.getElementById("productos-container");
-const URL='https://thanathosar.pythonanywhere.com/productos';
+const URL = 'https://thanathosar.pythonanywhere.com/productos';
 
-function crearTarjetasProductosInicio(productos){
-  productos.forEach(producto => {
-    const nuevoVino = document.createElement("div");
-    nuevoVino.classList = "tarjeta-producto"
-    nuevoVino.innerHTML = `
-    <img src=${producto.fotoTarjetaProducto} alt="Vinos" class="card">
-    <h3>${producto.nombreProducto}</h3>
-    <span class="descripTienda">
-     <p>${producto.descripcionProducto}</p>
-      <p class="stock">${producto.stockProducto}</p>
-    <button>Agregar al carrito</button>
-    </span>
-    <p class="precio">$${producto.precioClubProducto}</p><br>
-    
-    `
+function crearTarjetasProductosInicio(productos) {
+    productos.forEach(producto => {
+        const nuevoVino = document.createElement("div");
+        nuevoVino.classList = "tarjeta-producto";
+        nuevoVino.innerHTML = `
+        <img src=${producto.fotoTarjetaProducto} alt="Vinos" class="card">
+        <h3>${producto.nombreProducto}</h3>
+        <span class="descripTienda">
+            <p>${producto.descripcionProducto}</p>
+            <p class="stock">${producto.stockProducto}</p>
+            <button>Agregar al carrito</button>
+        </span>
+        <p class="precio">$${producto.precioClubProducto}</p><br>
+        `
 
-    contenedorTarjetas.appendChild(nuevoVino);
-    nuevoVino.getElementsByTagName("button")[0].addEventListener("click",() => agregarAlCarrito(producto))
-  });
+        contenedorTarjetas.appendChild(nuevoVino);
+
+        // Add event listener to the "Agregar al carrito" button
+        nuevoVino.getElementsByTagName("button")[0].addEventListener("click", () => agregarAlCarritoYActualizarUI(producto));
+    });
 }
 
-
-fetch(URL) 
-        .then(response => response.json())
-        .then(data => {
-
-
-          crearTarjetasProductosInicio(data);
-        })
+fetch(URL)
+  .then(response => response.json())
+  .then(data => {
+    crearTarjetasProductosInicio(data);
+  });
 
 function crearOfertas(){
   fetch('vinosLocal.json') 
@@ -105,4 +103,30 @@ function crearOfertas(){
             console.error('Error al cargar las ofertas: ', error);
         });
 }
+
+function agregarAlCarritoYActualizarUI(producto) {
+  const cantidad = agregarAlCarrito(producto); // La funcion está en cartservice.js
+  actualizarCarritoUI(producto, cantidad);
+}
+
+function actualizarCarritoUI(producto, cantidad) {
+  // Actualiza el carrito UI con producto y cantidades
+  const cartContainer = document.getElementById("cart-container");
+  cartContainer.innerHTML = ''; // Elimina los items existentes
+
+  const cart = getCartFromLocalStorage();
+
+  cart.items.forEach(item => {
+    const nuevoItem = document.createElement("div");
+    nuevoItem.innerHTML = `${item.nombre} - Cantidad: ${item.cantidad}`;
+    cartContainer.appendChild(nuevoItem);
+  });
+}
+
+
+
+
+
+
+
 crearOfertas();

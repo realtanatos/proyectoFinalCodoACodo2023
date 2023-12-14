@@ -25,9 +25,9 @@ fetch('vinosLocal.json')
 
     function agregarAlCarrito() {
       const producto = JSON.parse(this.getAttribute('data-producto'));
-      // Aquí puedes agregar la lógica para agregar el producto al carrito.
-      console.log('Producto agregado al carrito:', producto);
-    }
+      agregarAlCarrito(producto);
+  }
+  
   })
   .catch(error => {
     console.error('Error al cargar los productos: ', error);

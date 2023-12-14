@@ -911,3 +911,36 @@ nav a {
     background-color: #412027;
     /* Color para el HOVER,  buscar otro */
 }
+
+/* Estilo para el carritod e compras flotante */
+
+#cart-icon-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#cart-icon {
+    background-color: #412027;
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+#cart-icon img {
+    width: 50px; /* Ancho en 50px */
+    height: 50px; /* Alto en 50px */
+    margin-right: 5px;
+
+    /* Borde para debug de si aparece o no */
+ /*   border: 1px solid red;*/
+}
+
+#cart-item-count {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+}
