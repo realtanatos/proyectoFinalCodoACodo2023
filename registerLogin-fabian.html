@@ -1,3 +1,5 @@
+<!-- registerLogin-fabian.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +16,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
     <title>Saraza Winery Club - Inicio</title>
-
 </head>
 
 <body>
@@ -30,93 +31,43 @@
                 </a>
             </div>
         </header>
-        <!-- <div class="widget-1" id="parrafoHero"> -->
-            <!-- <p class="parrafoH">En Saraza wine club, te invitamos a un mundo de experiencias enológicas exclusivas que solo podrás disfrutar al unirte a nuestra comunidad. 
-            </p> -->
-            <!-- <img src="./imagenes/wineHero.jpg" alt="Bienvenidos a Saraza Wine Club" class="heroimage"> -->
-        <!-- </div> -->
+
         <div class="contenido">
             <div class="contenedorLoginRegistro">
                 <div class="cajaAtras">
                     <div class="cajaLogin">
                         <h3>¿Tienes cuenta?</h3>
-                        <!-- <p>Iniciar sesión</p> -->
                         <button id="bIniciarSession">Iniciar sesión</button>
+                                            <!-- Sección para incluir el formulario de inicio de sesión -->
+                    <div class="contenedorFormLoginRegistro">
+                        <object type="text/html" data="formularioLogin.html" style="width:100%;height:auto;"></object>
+                    </div>
                     </div>
                     <div class="cajaRegistro">
                         <h3>¿No tienes cuenta?</h3>
-                        <p>Registrate para iniciar sesión</p>
-                        <button id="bRegistrar">Registrarse</button>
+                        <p>Regístrate para iniciar sesión</p>
+                        <!-- Redirige al usuario a register-fabian.html al hacer clic en el botón -->
+                        <a href="register-fabian.html"><button id="bRegistrar">Registrarse</button></a>
                     </div>
-                    
-                </div>
-                <!-- login -->
-                <div class="contenedorFormLoginRegistro">
-                    <form action="" class="formularioLogin" id="formularioLogin">
-                        <h2>Iniciar Sesión</h2>
-                        <input type="email" id="emailLogin" placeholder="Correo Electronico" required>
-                        <input type="password" id="passwordLogin" placeholder="Contraseña" required>
-                        <button>Entrar</button>
-                        <p id="mensajeL" class="mensaje"></p>
-                    </form>
-                    <!-- registro -->
-                    <form action="" class="formularioRegistro" id="formularioRegistro" @submit.prevent="agregarCliente">
-                        <h2>Registrarse</h2>
-                        <input type="text" v-model="nombreUsuario" id="nombreUsuario" placeholder="Nombre de usuario" name="nombreUsuario" required>
-                        <input type="text" v-model="nombreApellido" id="nombreRegistro" placeholder="Nombre y apellido" name="nombreApellido" required>
-                        <input type="email" v-model="email" id="emailRegistro" placeholder="Correo Electronico" name="email" required>
-                        <input type="password" v-model="clave" id="passwordRegistro" placeholder="Contraseña" name="clave"required>
-                        <input type="password"  id="passwordRegistro2" placeholder="Confirmar contraseña" name="confirmarClave" required>
-                        <input type="tel" v-model="telefonoFijo" id="telefonoFijo" placeholder="telefono fijo" name="telefonoFijo">
-                        <input type="tel" v-model="telefonoCelular" id="telefonoCelular" placeholder="Celular" name="telefonoCelular">
 
-                        <!-- <label for="miembroClub">¿Miembro del Club?:</label> -->
-                        <!-- <select v-model="miembroClub" id="miembroClub" name="miembroClub">
-                        <option value="true">Sí</option>
-                        <option value="false">No</option> -->
-                        </select>
-
-                        <input type="text" v-model="direccionCliente" id="direccionCliente" placeholder="Dirección" name="direccionCliente">
-                        <input type="text" v-model="pisoDeptoCliente" id="pisoDeptoCliente" placeholder="Piso/Dto" name="pisoDeptoCliente">
-                        <input type="text" v-model="codigoPostalCliente" id="codigoPostalCliente" placeholder="Código postal" name="codigoPostalCliente">
-                        <input type="text" v-model="localidadCliente" id="localidadCliente" placeholder="Localidad" name="localidadCliente">
-                        <input type="text" v-model="provinciaCliente" id="provinciaCliente" placeholder="Provincia" name="provinciaCliente">
-                        <button type="submit" v-on:click="agregarCliente()">Registrarse</button>
-                        <p id="mensajeR" class="mensaje"></p>
-                    </form>
-                    
                 </div>
-                
             </div>
-
-
             <br><br>
-            
             <p>
-                En <span class="parrafo"><b>Saraza</b></span> wine club, te invitamos a un mundo de experiencias enológicas exclusivas que solo podrás disfrutar al unirte a nuestra comunidad.
-                <br><br>
-                
+                En <span class="parrafo"><b>Saraza</b></span> wine club, te invitamos a un mundo de experiencias
+                enológicas exclusivas que solo podrás disfrutar al unirte a nuestra comunidad.
             </p>
         </div>
         <div class="sidebar" id="ofertas-sidebar">
-            <!-- <p>ACA PONER LO QUE SE QUIERA POR EJEMPLO DESCUENTOS DE ESTE MES PARA REGISTRADOS - CLASS=SIDEBAR</p> -->
             <h1>Descuento exclusivo para miembros de <span class="parrafo">SARAZA</span></h1>
-            <!-- <img src="./imagenes/f581acf4e3f6cfc34a0dd1b3a334a9db.jpg" alt="Bienvenido a Sara Winery Club"
-                class="widget"> -->
-               
         </div>
-        <div class="sidebar-2" id="ofertas-sidebar2" >
-            <!-- <p>ACA PONER LO QUE SE QUIERA POR EJEMPLO TARJETAS DE PRODUCTOS CON OFERTAS - CLASS=SIDEBAR-2</p> -->
+        <div class="sidebar-2" id="ofertas-sidebar2">
             <h1>Descuento exclusivo para miembros de <span class="parrafo">SARAZA</span></h1>
-            <!-- <img src="./imagenes/b825a588d1b9b5f9151155749872da15.jpg" alt="Entrar a Saraza Wine Club" class="widget"> -->
         </div>
-        <!-- <div class="widget-2">
-            <p>WIDGET-2 ACA PONER LO QUE SE QUIERA POR EJEMPLO TARJETAS CON TESTIMONIOS DE CLIENTES FELICES - CLASS=WIDGET-2</p>
-            <h3>CLIENTES FELICES, HIC!</h3>
-        </div> -->
         <footer class="footer">
             <h3>Footer</h3>
         </footer>
+        <!-- Scripts y otras inclusiones -->
         <script src="js/validarRegistroLogin.js"></script>
         <script src="./js/menu.js"></script>
         <script src="js/jRegistroLogin.js"></script>
@@ -124,7 +75,6 @@
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script><!--Link de VUE-->
         <script src="./js/clientesCRUD.js" defer></script>
     </div>
-
 </body>
 
 </html>

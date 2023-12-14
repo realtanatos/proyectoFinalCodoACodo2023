@@ -105,9 +105,11 @@ function crearOfertas(){
 }
 
 function agregarAlCarritoYActualizarUI(producto) {
-  const cantidad = agregarAlCarrito(producto); // La funcion está en cartservice.js
-  actualizarCarritoUI(producto, cantidad);
+  const cantidad = agregarAlCarrito(producto);
+  // La siguiente es para actualizar el valor aprovechando el VUE
+  app.cartItemCount = cantidad;
 }
+
 
 function actualizarCarritoUI(producto, cantidad) {
   // Actualiza el carrito UI con producto y cantidades

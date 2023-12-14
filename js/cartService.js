@@ -11,30 +11,24 @@ function updateCartInLocalStorage(cart) {
 }
 
 function agregarAlCarrito(producto) {
-  // Obtengo los datos actuales del carrito
   let memoria = getCartFromLocalStorage();
   let cantidadProductoFinal;
 
-  // Busco el índice del producto en el carrito
   const indiceProducto = memoria.findIndex(vinosLocal => vinosLocal.id === producto.id);
 
   if (indiceProducto === -1) {
-    // Si el producto no está en el carrito, lo agrego
     const nuevoProducto = getNuevoProductoParaMemoria(producto);
     memoria.push(nuevoProducto);
     cantidadProductoFinal = 1;
   } else {
-    // Si el producto está en el carrito, incremento la cantidad
     memoria[indiceProducto].cantidad++;
     cantidadProductoFinal = memoria[indiceProducto].cantidad;
   }
 
-  // Actualizo los datos del carrito en localStorage
   updateCartInLocalStorage(memoria);
-  // Actualizo la interfaz de usuario del carrito
-  actualizarCarritoUI();
   return cantidadProductoFinal;
 }
+
 
 function restarAlCarrito(producto) {
   // Obtengo los datos actuales del carrito
@@ -56,12 +50,13 @@ function restarAlCarrito(producto) {
 
     // Actualizo los datos del carrito en localStorage
     updateCartInLocalStorage(memoria);
-    // Actualizo la interfaz de usuario del carrito
-    actualizarCarritoUI();
+
+    // No need to update the UI here, it will be handled by the Vue component
   }
 
   return cantidadProductoFinal;
 }
+
 
 function getNuevoProductoParaMemoria(producto) {
   // Creo un nuevo objeto producto con una cantidad inicial de 1

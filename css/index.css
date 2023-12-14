@@ -386,15 +386,22 @@ box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.2);
     outline: none;
     transition: 300ms;
 }
+/* Agrega estas reglas al final de tu archivo CSS */
+.cajaRegistro {
+    opacity: 1;
+    display: block;
+    margin-top: 20px; /* Agrega un margen superior para separar del elemento superior */
+}
 
 .cajaLogin {
-    opacity: 0;
-    display: "none";
+    opacity: 1;
+    display: inline-block;
+    margin-top: 20px; /* Agrega un margen superior para separar del elemento superior */
 }
 
 .cajaAtrasRegistro {
     opacity: 1;
-    display: block;
+    display: inline-block;
 }
 
 .cajaAtras button:hover {
@@ -944,3 +951,5 @@ nav a {
     font-size: 18px;
     font-weight: bold;
 }
+
+
