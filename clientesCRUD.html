@@ -23,8 +23,8 @@
             <a href="registroCRUD.html" class="btn btn-primary">Nuevo</a>
 
             <div class="table-responsive">
-                <table class="table border">
-                    <thead>
+                <table class="table border table-striped table-hover">
+                    <thead class="thead-dark">
                         <tr>
                             <th scope="col">id</th>
                             <th scope="col">Usuario</th>
@@ -43,7 +43,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="cliente in clientes" class="">
+                        <tr v-for="(cliente, index) in clientes" :key="index" :class="index % 2 === 0 ? 'table-light' : 'table-info'">
                             <td scope="row">{{cliente.clienteId}}</td>
                             <td>{{cliente.nombreUsuario}}</td>
                             <td>{{cliente.nombreApellido}}</td>
