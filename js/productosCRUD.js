@@ -1,3 +1,46 @@
+// Supongamos que tienes una lista de productos
+const productos = [
+    {
+      productoId: 1,
+      nombreProducto: "Producto 1",
+      descripcionProducto: "Descripción del Producto 1",
+      // ... otras propiedades
+    },
+    {
+      productoId: 2,
+      nombreProducto: "Producto 2",
+      descripcionProducto: "Descripción del Producto 2",
+      // ... otras propiedades
+    },
+    // Agrega más productos según sea necesario
+  ];
+  
+  // Función para obtener 4 productos al azar
+  function obtenerProductosAleatorios() {
+    const productosAleatorios = [];
+    const totalProductos = productos.length;
+  
+    // Obtener índices únicos al azar
+    const indicesAleatorios = [];
+    while (indicesAleatorios.length < 4) {
+      const indice = Math.floor(Math.random() * totalProductos);
+      if (!indicesAleatorios.includes(indice)) {
+        indicesAleatorios.push(indice);
+      }
+    }
+  
+    // Obtener los productos correspondientes a los índices
+    indicesAleatorios.forEach((indice) => {
+      productosAleatorios.push(productos[indice]);
+    });
+  
+    return productosAleatorios;
+  }
+  
+  // Obtener 4 productos al azar
+  const productosAleatorios = obtenerProductosAleatorios();
+
+
 const { createApp } = Vue
   createApp({
     data() {

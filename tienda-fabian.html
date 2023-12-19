@@ -12,56 +12,67 @@
     <!-- Fin de Agregado para cargar Google Fonts -->
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-
-    <title>Saraza Winery Club - Inicio</title>
+    <link rel="icon" type="image/jpg" href="./imagenes/favicon.ico" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Saraza Winery Club - Tienda</title>
 
 </head>
 
 <body>
-    <div class="contenedor" id="carrito">
+    <div class="contenedor" id="tienda">
         <header class="header animate__animated animate__bounce">
             <h2>Inicio</h2>
-        </header>
-        <!-- <div class="widget-1">
-            <img src="./imagenes/wineHero.jpg" alt="Bienvenidos a Saraza Wine Club" class="heroimage">
-        </div> -->
-        <main class="contenido">
-         
-            <h1>Vinos </h1>
-            <section class="contenido" id="productos-container">
-            </section>
-            <div class="productos" id="contenidoTienda">
-                <section id="cart-container"></section>
+            <div class="cart-icon-container">
+                <a href="carrito-fabian.html">
+                    <div class="cart-icon">
+                        <img src="./imagenes/pngimg.com - shopping_cart_PNG20.png" alt="Shopping Cart">
+                        <span class="cart-item-count">0</span>
+                    </div>
+                </a>
             </div>
+        </header>
 
-        </main>
+        <div class="widget-1">
+            <h2>BUSCADOR DE PRODUCTOS</h2>
+            <br>
+            <form>
+                <input type="text" placeholder="Buscar productos...">
+                <button type="button" @click="realizarBusqueda">Buscar</button>
+            </form>
+        </div>
+
+        <main class="contenido" id="productos-container">
+            <h1>ESPECIALIDADES</h1>
+            <div class="productos" id="contenidoTienda">
+              <!-- Bucle para mostrar los productos aleatorios -->
+              <div v-for="(producto, index) in productosAleatorios" :key="index" class="producto">
+                <h3>{{ producto.nombreProducto }}</h3>
+                <p>{{ producto.descripcionProducto }}</p>
+                <!-- Agrega más elementos según sea necesario -->
+              </div>
+            </div>
+          </main>
+
         <aside class="sidebar">
-            <h1>Descuento exclusivo para miembros de <span class="parrafo">SARAZA</span></h1>
+            <h3>Destacados</h3>
             <div id="ofertas-sidebar"></div>
         </aside>
+
         <aside class="sidebar-2">
-            
-            <h1>Descuento exclusivo para miembros de <span class="parrafo">SARAZA</span></h1>
+            <h3>Destacados</h3>
             <div id="ofertas-sidebar2"></div>
         </aside>
-        <div class="widget-2">
-            <p>ACA PONER LO QUE SE QUIERA POR EJEMPLO CARUSEL DE PRODUCTOS RELACIONADOS - CLASS=WIDGET-2</p>
-            <h3>CARROUSEL PRODUCTOS RELACIONADOS</h3>
-        </div>
+
         <footer class="footer">
             <h3>Footer</h3>
         </footer>
-        <!-- <script src="./js/index.js"></script> -->
-        <!-- <script src="js/tienda.js"></script> -->
-        <!-- <script src="js/carrito.js"></script> -->
-        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
-        <script src="./js/menu.js" defer></script>
-        <script src="js/jRegistroLogin.js" defer></script>
-        <script src="./js/cartService.js" defer></script>
-        <script src="./js/indexcarrito.js" defer></script>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+    <script src="./js/menu.js" defer></script>
+    <script src="js/jRegistroLogin.js" defer></script>
+    <script src="./js/cartService.js" defer></script>
+    <script src="./js/indexcarrito.js" defer></script>
+    <script src="./js/productosCRUD.js" defer></script>
 </body>
 
 </html>

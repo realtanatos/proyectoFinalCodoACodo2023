@@ -12,8 +12,9 @@
     <!-- Fin de Agregado para cargar Google Fonts -->
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-
+    <link rel="icon" type="image/jpg" href="./imagenes/favicon.ico"/>
     <title>Saraza Winery Club - Inicio</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 
@@ -71,34 +72,44 @@
                 </p>
             </div>
             <div class="sidebar-2">
-                <h1>Ingresar</h1>
-                <img src="./imagenes/chinchin-login.webp" alt="Entrar a Saraza Wine Club" class="widget heroimage">
-                <form action="" class="formularioLogin" id="formularioLogin">
-                    <h2>Iniciar Sesión</h2>
-                    <input type="email" id="emailLogin" placeholder="Correo Electronico" required>
-                    <input type="password" id="passwordLogin" placeholder="Contraseña" required>
-                    <button>Entrar</button>
-                    <p id="mensajeL" class="mensaje"></p>
-                </form>
-            </div>
-            <div class="testimonios">
-                <h3>Premios y Reconocimientos</h3>
-                <br>
-                <div>
-                    <img src="./imagenes/wineHero.jpg" alt="Bienvenidos a Saraza Wine Club" class="heroimage">
+                <img src="./imagenes/chinchin-login.webp" alt="Entrar a Saraza Wine Club" class="sidebar-2-ingresar">
+                <div class="contenedorFormLoginRegistro" id="formularioLoginContainer">
+                    <form action="" class="formularioLogin" id="formularioLogin">
+                        <h2>Iniciar Sesión</h2>
+                        <input type="email" id="emailLogin" placeholder="Correo Electronico" required>
+                        <input type="password" id="passwordLogin" placeholder="Contraseña" required>
+                        <button>Entrar</button>
+                        <p id="mensajeL" class="mensaje"></p>
+                    </form>
+                </div>
+
+                <div class="cajaRegistro">
+                    <h3>¿No tienes cuenta?</h3>
+                    <p>Regístrate para iniciar sesión</p>
+                    <!-- Redirige al usuario a register-fabian.html al hacer clic en el botón -->
+                    <a href="register-fabian.html"><button id="bRegistrar">Registrarse</button></a>
                 </div>
             </div>
+            <div class="testimonios">
+                <!-- <h2>Premios y Reconocimientos</h2> -->
+                <br>
+                <div id="contenedor-tarjeta" class="contenedor-tarjeta">
+                    <!-- Aquí se cargan las tarjetas generadas por cargaPremios.js -->
+                </div>
+            </div>
+            <footer class="footer">
+                <h3>Footer</h3>
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-        <h3>Footer</h3>
-    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
     <script src="./js/menu.js" defer></script>
     <script src="js/jRegistroLogin.js" defer></script>
     <script src="./js/cartService.js" defer></script>
     <script src="./js/indexcarrito.js" defer></script>
+    <script src="./js/cargaPremios.js" defer></script>
     </div>
 
 </body>

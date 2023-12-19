@@ -1,5 +1,3 @@
-<!-- registerLogin-fabian.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,12 +12,15 @@
     <!-- Fin de Agregado para cargar Google Fonts -->
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="icon" type="image/jpg" href="./imagenes/favicon.ico" />
+    <title>Saraza Winery Club - Registrese - Ingresar</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <title>Saraza Winery Club - Inicio</title>
 </head>
 
 <body>
     <div class="contenedor" id="login-registro">
+        <!-- Header section -->
         <header class="header animate__animated animate__bounce">
             <h2>Inicio</h2>
             <div id="cart-icon-container">
@@ -33,48 +34,63 @@
         </header>
 
         <div class="contenido">
-            <div class="contenedorLoginRegistro">
-                <div class="cajaAtras">
-                    <div class="cajaLogin">
-                        <h3>¿Tienes cuenta?</h3>
-                        <button id="bIniciarSession">Iniciar sesión</button>
-                                            <!-- Sección para incluir el formulario de inicio de sesión -->
-                    <div class="contenedorFormLoginRegistro">
-                        <object type="text/html" data="formularioLogin.html" style="width:100%;height:auto;"></object>
+            <!-- Content section -->
+            <div class="contenido">
+                <div class="contenedorLoginRegistro">
+                    <!-- Login form -->
+                    <div class="contenedorFormLoginRegistro" id="formularioLoginContainer">
+                        <form action="" class="formularioLogin" id="formularioLogin">
+                            <h2>Iniciar Sesión</h2>
+                            <input type="email" id="emailLogin" placeholder="Correo Electronico" required>
+                            <input type="password" id="passwordLogin" placeholder="Contraseña" required>
+                            <button>Entrar</button>
+                            <p id="mensajeL" class="mensaje"></p>
+                        </form>
                     </div>
-                    </div>
+
+                    <!-- Registration section -->
                     <div class="cajaRegistro">
                         <h3>¿No tienes cuenta?</h3>
                         <p>Regístrate para iniciar sesión</p>
                         <!-- Redirige al usuario a register-fabian.html al hacer clic en el botón -->
                         <a href="register-fabian.html"><button id="bRegistrar">Registrarse</button></a>
                     </div>
-
                 </div>
+                <br><br>
+                <p>
+                    En <span class="parrafo"><b>Saraza</b></span> wine club, te invitamos a un mundo de experiencias
+                    enológicas exclusivas que solo podrás disfrutar al unirte a nuestra comunidad.
+                </p>
             </div>
-            <br><br>
-            <p>
-                En <span class="parrafo"><b>Saraza</b></span> wine club, te invitamos a un mundo de experiencias
-                enológicas exclusivas que solo podrás disfrutar al unirte a nuestra comunidad.
-            </p>
         </div>
+
+
+        <!-- Sidebar section -->
         <div class="sidebar" id="ofertas-sidebar">
-            <h1>Descuento exclusivo para miembros de <span class="parrafo">SARAZA</span></h1>
+            <h3>Descuento exclusivo para miembros de <span class="parrafo">SARAZA</span></h3>
         </div>
+
+        <!-- Sidebar-2 section -->
         <div class="sidebar-2" id="ofertas-sidebar2">
-            <h1>Descuento exclusivo para miembros de <span class="parrafo">SARAZA</span></h1>
+            <h3>Descuento exclusivo para miembros de <span class="parrafo">SARAZA</span></h3>
+
         </div>
+
+        <!-- Footer section -->
         <footer class="footer">
             <h3>Footer</h3>
         </footer>
-        <!-- Scripts y otras inclusiones -->
+
+        <!-- Scripts and other inclusions -->
         <script src="js/validarRegistroLogin.js"></script>
         <script src="./js/menu.js"></script>
         <script src="js/jRegistroLogin.js"></script>
         <script src="js/validarlogin.js"></script>
-        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script><!--Link de VUE-->
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script><!--Link of VUE-->
         <script src="./js/clientesCRUD.js" defer></script>
+
     </div>
+
 </body>
 
 </html>
