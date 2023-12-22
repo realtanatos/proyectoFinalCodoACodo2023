@@ -18,7 +18,7 @@ createApp({
             codigoPostalCliente : "",
             localidadCliente : "",
             provinciaCliente : ""
-                };
+        };
     },
     methods: {
         fetchData() {
