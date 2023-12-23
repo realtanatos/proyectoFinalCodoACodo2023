@@ -61,6 +61,7 @@ createApp({
 
                 const data = await response.json();
                 console.log('Cliente creado:', data);
+                alert("EL USUARIO YA SE HA AGREGADO");
 
                 // Actualizar la lista después de agregar sin recargar la página
                 this.fetchData();
