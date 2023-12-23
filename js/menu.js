@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <a class="navheader" href="carrito-fabian.html" id="bCarrito">Carrito</a>
             <a class="navheader" href="registerLogin-fabian.html" id="bIniciarSession">Login</a>
             <a class="navheader" href="quienesSomos-fabian.html">¿Quiénes somos?</a>
-            <a class="navheader" href="productos.html">Administrar</a>
+            <a class="navheader" href="productosCRUD.html">Administrar</a>
             <a class="navheader" href="register-fabian.html" id="bRegistrar">Registrarse</a>
         </menunav>`;
 

@@ -12,63 +12,79 @@
     <!-- Fin de Agregado para cargar Google Fonts -->
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="icon" type="image/jpg" href="./imagenes/favicon.ico" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Saraza Winery Club - Tienda</title>
 
+    <title>Saraza Winery Club - Registro</title>
 </head>
 
 <body>
-    <div class="contenedor" id="tienda">
+    <div class="contenedor" id="login-registro">
         <header class="header animate__animated animate__bounce">
-            <h2>Inicio</h2>
-            <div class="cart-icon-container">
-                <a href="carrito-fabian.html">
-                    <div class="cart-icon">
-                        <img src="./imagenes/pngimg.com - shopping_cart_PNG20.png" alt="Shopping Cart">
-                        <span class="cart-item-count">0</span>
-                    </div>
-                </a>
-            </div>
+            <h2>Registro</h2>
+            <!-- Puedes agregar el icono del carrito o cualquier otro elemento de navegación aquí -->
         </header>
 
-        <div class="widget-1">
+        <!-- Contenido principal del registro -->
+        <div class="contenido">
+            <div class="contenedorFormRegistro" id="formularioRegistro">
+                <!-- Incluye el formulario de registro -->
+                <form @submit.prevent="agregarCliente">
+                    <label for="nombreUsuario">Nombre de Usuario:</label>
+                    <input type="text" v-model="nombreUsuario" required>
 
-            <div class="contenedorLoginRegistro">
-                <!-- Login form -->
-                <form action="" class="formularioLogin" id="formularioLogin">
-                    <h2>Registrese</h2>
-                    <div class="contenedorFormRegistro">
-                        <!-- Incluye el formulario de registro -->
-                        <object type="text/html" data="formularioRegistro.html"
-                            style="width:100%;height:auto;"></object>
-                    </div>
-                    <p id="mensajeL" class="mensaje"></p>
+                    <label for="nombreApellido">Nombre y Apellido:</label>
+                    <input type="text" v-model="nombreApellido" required>
+
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" v-model="email" required>
+
+                    <label for="clave">Contraseña:</label>
+                    <input type="password" v-model="clave" required>
+
+                    <label for="telefonoFijo">Teléfono Fijo:</label>
+                    <input type="tel" v-model="telefonoFijo">
+
+                    <label for="telefonoCelular">Teléfono Celular:</label>
+                    <input type="tel" v-model="telefonoCelular">
+
+                    <label for="direccionCliente">Dirección:</label>
+                    <input type="text" v-model="direccionCliente">
+
+                    <label for="pisoDeptoCliente">Piso/Depto:</label>
+                    <input type="text" v-model="pisoDeptoCliente">
+
+                    <label for="codigoPostalCliente">Código Postal:</label>
+                    <input type="text" v-model="codigoPostalCliente">
+
+                    <label for="localidadCliente">Localidad:</label>
+                    <input type="text" v-model="localidadCliente">
+
+                    <label for="provinciaCliente">Provincia:</label>
+                    <input type="text" v-model="provinciaCliente">
+
+                    <button type="submit">Registrarse</button>
+                    <p v-if="error" class="mensaje">{{ error }}</p>
                 </form>
             </div>
         </div>
 
-        <main class="contenido" id="productos-container">
-
-        </main>
-
-        <aside class="sidebar">
-            <h3>Destacados</h3>
-            <div id="ofertas-sidebar"></div>
-        </aside>
-
-        <aside class="sidebar-2">
-            <h3>Destacados</h3>
-            <div id="ofertas-sidebar2"></div>
-        </aside>
+        <!-- Puedes agregar otras secciones, barras laterales, o contenido adicional según tus necesidades -->
 
         <footer class="footer">
             <h3>Footer</h3>
         </footer>
+
+        <!-- Enlaces a scripts necesarios -->
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="./js/clientesCRUD.js" defer></script>
+        <!-- Scripts y otras inclusiones -->
+        <!--<script src="./js/validarRegistroLogin.js" defer></script>-->
+        <script src="./js/menu.js" defer></script>
+        <!--<script src="./js/jRegistroLogin.js" defer></script>-->
+        <!--<script src="./js/validarlogin.js" defer></script>-->
+
+
+
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
-    <script src="./js/menu.js" defer></script>
-    <script src="./js/productosTienda.js" defer></script>
 </body>
 
 </html>

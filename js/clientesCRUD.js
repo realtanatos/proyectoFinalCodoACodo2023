@@ -1,5 +1,3 @@
-// clientes.js
-
 const { createApp } = Vue;
 
 createApp({
@@ -9,29 +7,31 @@ createApp({
             nombreUsuario: "",
             nombreApellido: "",
             email: "",
-            clave : "",
-            telefonoFijo : "",
-            telefonoCelular : "",
-            miembroClub : false,
-            direccionCliente : "",
-            pisoDeptoCliente : "",
-            codigoPostalCliente : "",
-            localidadCliente : "",
-            provinciaCliente : ""
+            clave: "",
+            telefonoFijo: "",
+            telefonoCelular: "",
+            miembroClub: false,
+            direccionCliente: "",
+            pisoDeptoCliente: "",
+            codigoPostalCliente: "",
+            localidadCliente: "",
+            provinciaCliente: "",
+            error: null, // Para manejar errores
         };
     },
     methods: {
-        fetchData() {
-            fetch('https://thanathosar.pythonanywhere.com/clientes')
-                .then(response => response.json())
-                .then(data => {
-                    this.clientes = data;
-                })
-                .catch(error => {
-                    console.error('Error al obtener clientes:', error);
-                });
+        async fetchData() {
+            try {
+                const response = await fetch('https://thanathosar.pythonanywhere.com/clientes');
+                if (!response.ok) {
+                    throw new Error('Error al obtener clientes');
+                }
+                this.clientes = await response.json();
+            } catch (error) {
+                console.error('Error al obtener clientes:', error.message);
+            }
         },
-        agregarCliente() {
+        async agregarCliente() {
             console.log("Formulario enviado");
             const nuevoCliente = {
                 nombreUsuario: this.nombreUsuario,
@@ -40,50 +40,51 @@ createApp({
                 clave: this.clave,
                 telefonoFijo: this.telefonoFijo,
                 telefonoCelular: this.telefonoCelular,
-                miembroClub: Boolean(this.miembroClub), // Convertir a booleano
+                miembroClub: Boolean(this.miembroClub),
                 direccionCliente: this.direccionCliente,
                 pisoDeptoCliente: this.pisoDeptoCliente,
                 codigoPostalCliente: this.codigoPostalCliente,
                 localidadCliente: this.localidadCliente,
                 provinciaCliente: this.provinciaCliente
             };
-            
-            console.log('Nuevo cliente a agregar:', nuevoCliente);
 
-            fetch('https://thanathosar.pythonanywhere.com/clientes', {
-                body: JSON.stringify(nuevoCliente),
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' }
-                
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Cliente creado:', data);
-                window.location.reload();
-                this.fetchData(); // Actualizar la lista después de agregar
-            })
-            .catch(error => {
-                console.error('Error al agregar cliente:', error);
-            });
-        
-        },
-        eliminarCliente(id) {
-           
-            const url = `https://thanathosar.pythonanywhere.com/clientes/${id}`;
-            var options = {
-                method: 'DELETE',
-                
-            };
-            console.log("entra ")
-            fetch(url, options)
-                .then(res => res.json())
-                .then(res => {
-                    alert('Cliente Eliminado');
-                    this.fetchData(); // Actualizar la lista después de eliminar
-                })
-                .catch(error => {
-                    console.error('Error al eliminar cliente:', error);
+            try {
+                const response = await fetch('https://thanathosar.pythonanywhere.com/clientes', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(nuevoCliente),
                 });
+
+                if (!response.ok) {
+                    throw new Error('Error al agregar cliente');
+                }
+
+                const data = await response.json();
+                console.log('Cliente creado:', data);
+
+                // Actualizar la lista después de agregar sin recargar la página
+                this.fetchData();
+            } catch (error) {
+                console.error('Error al agregar cliente:', error.message);
+                this.error = 'Error al agregar cliente';
+            }
+        },
+        async eliminarCliente(id) {
+            const url = `https://thanathosar.pythonanywhere.com/clientes/${id}`;
+            
+            try {
+                const response = await fetch(url, { method: 'DELETE' });
+
+                if (!response.ok) {
+                    throw new Error('Error al eliminar cliente');
+                }
+
+                console.log('Cliente eliminado:', id);
+                this.fetchData(); // Actualizar la lista después de eliminar
+            } catch (error) {
+                console.error('Error al eliminar cliente:', error.message);
+                this.error = 'Error al eliminar cliente';
+            }
         },
         // Otros métodos para editar y actualizar clientes
     },

@@ -1,5 +1,16 @@
 <!-- formularioRegistro.html -->
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ... (head del formularioRegistro.html) -->
+</head>
+
+<body>
+    <!-- ... (contenido del formularioRegistro.html) -->
+<!-- formularioRegistro.html -->
+
 <form action="" class="formularioRegistro" id="formularioRegistro" @submit.prevent="agregarCliente">
     <input type="text" v-model="nombreUsuario" id="nombreUsuario" placeholder="Nombre de usuario" name="nombreUsuario" required>
     <input type="text" v-model="nombreApellido" id="nombreRegistro" placeholder="Nombre y apellido" name="nombreApellido" required>
@@ -13,6 +24,11 @@
     <input type="text" v-model="codigoPostalCliente" id="codigoPostalCliente" placeholder="Código postal" name="codigoPostalCliente">
     <input type="text" v-model="localidadCliente" id="localidadCliente" placeholder="Localidad" name="localidadCliente">
     <input type="text" v-model="provinciaCliente" id="provinciaCliente" placeholder="Provincia" name="provinciaCliente">
-    <button type="submit" v-on:click="agregarCliente()">Registrarse</button>
+    <button type="submit">Registrarse</button>
     <p id="mensajeR" class="mensaje"></p>
 </form>
+<script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+<script src="./js/clientesCRUD.js"></script>
+</body>
+
+</html>
