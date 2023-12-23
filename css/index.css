@@ -1147,3 +1147,24 @@ nav a {
     font-size: 18px;
     font-weight: bold;
 }
+
+/* Agrega estilos para la clase .producto-tarjeta */
+.producto-tarjeta {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para la clase .imagen-tarjeta */
+  .imagen-tarjeta {
+    max-width: 100px;
+    max-height: 150px;
+    /* Añade otros estilos según sea necesario */
+  }
+  
+
+  /* Aplica estilos al contenedor de productos */
+.productos {
+    /* Ajusta según tus necesidades */
+    grid-column: span 2; /* Ocupa dos columnas completas */
+  }

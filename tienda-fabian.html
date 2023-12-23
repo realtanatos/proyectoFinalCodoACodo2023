@@ -47,7 +47,9 @@
               <!-- Bucle para mostrar los productos aleatorios -->
               <div v-for="(producto, index) in productosAleatorios" :key="index" class="producto">
                 <h3>{{ producto.nombreProducto }}</h3>
-                <p>{{ producto.descripcionProducto }}</p>
+                <img :src="producto.fotoTarjetaProducto" :alt="producto.nombreProducto" class="imagen-producto">
+                <p v-html="truncateText(productos[0].descripcionProducto, 200)"></p>
+                <a href="#">Ver más</a>
                 <!-- Agrega más elementos según sea necesario -->
               </div>
             </div>

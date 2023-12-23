@@ -1,3 +1,4 @@
+// Código Vue
 const { createApp } = Vue;
 
 createApp({
@@ -5,11 +6,11 @@ createApp({
     return {
       productos: [],
       productosAleatorios: [],
-      // URL for fetching and storing data
+      // URL para el fetching y storing data
       url: 'https://thanathosar.pythonanywhere.com/productos',
       error: false,
       cargando: true,
-      /* Attributes for storing form values */
+      /* Atributos para guardar los valores */
       nombre: "",
       descripcion: "",
       fotoTarjeta: "",
@@ -22,6 +23,13 @@ createApp({
     };
   },
   methods: {
+    truncateText(text, maxLength) {
+      if (text.length <= maxLength) {
+        return text;
+      }
+      const truncatedText = text.substring(0, maxLength) + '... <a href="#">Ver más</a>';
+      return truncatedText;
+    },
     fetchData(url) {
       fetch(url)
         .then(response => response.json())
@@ -29,8 +37,12 @@ createApp({
           this.productos = data;
           // Obtener dos productos aleatorios
           this.productosAleatorios = this.obtenerProductosAleatorios(data, 2);
+          console.log("Productos aleatorios:", this.productosAleatorios); // Para saber si los carga
           this.cargando = false;
           console.log("JSON data loaded successfully");
+
+          // Llamada a la función para actualizar las tarjetas
+          this.actualizarTarjetas(this.productosAleatorios);
         })
         .catch(err => {
           console.error('Error fetching data:', err);
@@ -44,10 +56,10 @@ createApp({
         method: 'DELETE',
       };
       fetch(url, options)
-        .then(res => res.text()) // or res.json()
+        .then(res => res.text()) // o tambioen puede ser res.json()
         .then(res => {
           alert('Registro Eliminado');
-          location.reload(); // reloads the JSON after deleting the record
+          location.reload(); // recarga el JSON despues de borrar el registro
         })
         .catch(error => {
           console.error('Error deleting record:', error);
@@ -76,16 +88,16 @@ createApp({
       fetch(this.url, options)
         .then(() => {
           alert("Registro grabado");
-          window.location.href = "./productos.html";  // reloads productos.html
+          window.location.href = "./productos.html";  // recarga productos.html
         })
         .catch(err => {
           console.error('Error saving record:', err);
-          alert("Error al Grabar");  // displays an error message
+          alert("Error al Grabar");  // Mostrar mensaje de error
         });
     },
     realizarBusqueda() {
       alert("El buscador se implementará pronto");
-      // Puedes realizar otras acciones relacionadas con la búsqueda aquí
+      // Otras acciones relacionadas con la búsqueda, se ponen aquí
     },
     obtenerProductosAleatorios(productos, cantidad) {
       const productosAleatorios = [];
@@ -107,35 +119,56 @@ createApp({
 
       return productosAleatorios;
     },
+    verProducto(producto) {
+      const productId = producto.id; // Reemplaza 'id' con el nombre real de la propiedad del ID
+      window.location.href = `producto-detalle.html?id=${productId}`;
+    },
+    actualizarTarjetas(productos) {
+      console.log("Productos recibidos en actualizarTarjetas:", productos);
+
+      // ... (código anterior)
+
+      // Actualizar la primera tarjeta
+      const tarjeta1 = document.getElementById('ofertas-sidebar');
+      if (productos.length > 0) {
+        tarjeta1.innerHTML = `
+          <div class="producto-tarjeta">
+            <h3>${productos[0].nombreProducto}</h3>
+            <img src="${productos[0].fotoTarjetaProducto}" alt="${productos[0].nombreProducto}" class="imagen-tarjeta">
+            <p>${this.truncateText(productos[0].descripcionProducto, 50)}</p>
+            <a href="#">Ver más</a>
+            <p>Valor: $ ${productos[0].precioClubProducto}</p>
+            <p>Stock: ${productos[0].stockProducto} unidades disponibles</p>
+            <!-- Otros elementos según sea necesario -->
+          </div>
+        `;
+      } else {
+        // Si no hay productos, limpiar la tarjeta
+        tarjeta1.innerHTML = '';
+      }
+
+      // Actualizar la segunda tarjeta
+      const tarjeta2 = document.getElementById('ofertas-sidebar2');
+      if (productos.length > 1) {
+        tarjeta2.innerHTML = `
+          <div class="producto-tarjeta">
+            <h3>${productos[1].nombreProducto}</h3>
+            <img src="${productos[1].fotoTarjetaProducto}" alt="${productos[1].nombreProducto}" class="imagen-tarjeta">
+            <p>${this.truncateText(productos[1].descripcionProducto, 50)}</p>
+            <a href="#">Ver más</a>
+            <p>Valor: $ ${productos[1].precioClubProducto}</p>
+            <p>Stock: ${productos[1].stockProducto} unidades disponibles</p>
+            <!-- Otros elementos según sea necesario -->
+          </div>
+        `;
+      } else {
+        // Si no hay suficientes productos, limpiar la tarjeta
+        tarjeta2.innerHTML = '';
+      }
+    },
   },
   created() {
     this.fetchData(this.url);
     console.log("Component created successfully");
   },
 }).mount('#tienda');
-
-// Función para actualizar el contenido de las tarjetas en el HTML
-function actualizarTarjetas(productos) {
-  // Actualizar la primera tarjeta
-  const tarjeta1 = document.getElementById('ofertas-sidebar');
-  if (productos.length > 0) {
-    tarjeta1.innerHTML = `
-      <h3>${productos[0].nombreProducto}</h3>
-      <p>${productos[0].descripcionProducto}</p>
-      <!-- Otros elementos según sea necesario -->
-    `;
-  }
-
-  // Actualizar la segunda tarjeta
-  const tarjeta2 = document.getElementById('ofertas-sidebar2');
-  if (productos.length > 1) {
-    tarjeta2.innerHTML = `
-      <h3>${productos[1].nombreProducto}</h3>
-      <p>${productos[1].descripcionProducto}</p>
-      <!-- Otros elementos según sea necesario -->
-    `;
-  }
-}
-
-// Llamada a la función para actualizar las tarjetas
-actualizarTarjetas([]);
