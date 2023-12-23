@@ -12,42 +12,63 @@
     <!-- Fin de Agregado para cargar Google Fonts -->
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="icon" type="image/jpg" href="./imagenes/favicon.ico" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Saraza Winery Club - Tienda</title>
 
-    <title>Saraza Winery Club - Registro</title>
 </head>
 
 <body>
-    <div class="contenedor" id="login-registro">
+    <div class="contenedor" id="tienda">
         <header class="header animate__animated animate__bounce">
-            <h2>Registro</h2>
-            <!-- Puedes agregar el icono del carrito o cualquier otro elemento de navegación aquí -->
+            <h2>Inicio</h2>
+            <div class="cart-icon-container">
+                <a href="carrito-fabian.html">
+                    <div class="cart-icon">
+                        <img src="./imagenes/pngimg.com - shopping_cart_PNG20.png" alt="Shopping Cart">
+                        <span class="cart-item-count">0</span>
+                    </div>
+                </a>
+            </div>
         </header>
 
-        <!-- Contenido principal del registro -->
-        <div class="contenido">
-            <div class="contenedorFormRegistro">
-                <!-- Incluye el formulario de registro -->
-                <object type="text/html" data="formularioRegistro.html" style="width:100%;height:auto;"></object>
+        <div class="widget-1">
+
+            <div class="contenedorLoginRegistro">
+                <!-- Login form -->
+                <form action="" class="formularioLogin" id="formularioLogin">
+                    <h2>Registrese</h2>
+                    <div class="contenedorFormRegistro">
+                        <!-- Incluye el formulario de registro -->
+                        <object type="text/html" data="formularioRegistro.html"
+                            style="width:100%;height:auto;"></object>
+                    </div>
+                    <p id="mensajeL" class="mensaje"></p>
+                </form>
             </div>
         </div>
 
-        <!-- Puedes agregar otras secciones, barras laterales, o contenido adicional según tus necesidades -->
+        <main class="contenido" id="productos-container">
+
+        </main>
+
+        <aside class="sidebar">
+            <h3>Destacados</h3>
+            <div id="ofertas-sidebar"></div>
+        </aside>
+
+        <aside class="sidebar-2">
+            <h3>Destacados</h3>
+            <div id="ofertas-sidebar2"></div>
+        </aside>
 
         <footer class="footer">
             <h3>Footer</h3>
         </footer>
-
-        <!-- Enlaces a scripts necesarios -->
-        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-        <script src="./js/clientesCRUD.js" defer></script>
-        <!-- Scripts y otras inclusiones -->
-        <script src="js/validarRegistroLogin.js"></script>
-        <script src="./js/menu.js"></script>
-        <script src="js/jRegistroLogin.js"></script>
-        <script src="js/validarlogin.js"></script>
-        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script><!--Link de VUE-->
-        <script src="./js/clientesCRUD.js" defer></script>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+    <script src="./js/menu.js" defer></script>
+    <script src="./js/productosTienda.js" defer></script>
 </body>
 
 </html>

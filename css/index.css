@@ -1168,3 +1168,39 @@ nav a {
     /* Ajusta según tus necesidades */
     grid-column: span 2; /* Ocupa dos columnas completas */
   }
+
+
+  /* Para la tienda  */
+
+  .producto {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .navegacion {
+    margin-top: 20px;
+  }
+
+
+  #contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ajusta según sea necesario */
+    justify-content: center; /* Ajusta según sea necesario */
+    min-height: 100vh; /* Establece una altura mínima del viewport */
+  }
+  
+  #contenedorFormRegistro {
+    /* Agrega estilos según sea necesario */
+    width: 100%;
+    max-width: 600px; /* Ajusta según sea necesario */
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 20px; /* Ajusta según sea necesario */
+  }
+  
+  div.contenido {
+    display: flex !important;
+  }
+  
